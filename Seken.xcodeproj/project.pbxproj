@@ -7,14 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FA38701D436CF6C83F215A8 /* Pods_SekenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54504536C1A6796F0AD2082C /* Pods_SekenTests.framework */; };
 		36DBAC591F873B2900D7D0EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBAC581F873B2900D7D0EA /* AppDelegate.swift */; };
-		36DBAC5B1F873B2900D7D0EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBAC5A1F873B2900D7D0EA /* ViewController.swift */; };
-		36DBAC5E1F873B2900D7D0EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36DBAC5C1F873B2900D7D0EA /* Main.storyboard */; };
 		36DBAC611F873B2900D7D0EA /* Seken.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36DBAC5F1F873B2900D7D0EA /* Seken.xcdatamodeld */; };
 		36DBAC631F873B2900D7D0EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DBAC621F873B2900D7D0EA /* Assets.xcassets */; };
 		36DBAC661F873B2900D7D0EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36DBAC641F873B2900D7D0EA /* LaunchScreen.storyboard */; };
 		36DBAC711F873B2900D7D0EA /* SekenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBAC701F873B2900D7D0EA /* SekenTests.swift */; };
 		36DBAC7C1F873B2900D7D0EA /* SekenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBAC7B1F873B2900D7D0EA /* SekenUITests.swift */; };
+		36DBAC911F87401700D7D0EA /* AlertViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBAC901F87401600D7D0EA /* AlertViewManager.swift */; };
+		36DBACA01F8740BC00D7D0EA /* SekenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36DBAC971F8740BC00D7D0EA /* SekenSDK.framework */; };
+		36DBACA71F8740BC00D7D0EA /* SekenSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBACA61F8740BC00D7D0EA /* SekenSDKTests.swift */; };
+		36DBACA91F8740BC00D7D0EA /* SekenSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 36DBAC991F8740BC00D7D0EA /* SekenSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36DBACAC1F8740BC00D7D0EA /* SekenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36DBAC971F8740BC00D7D0EA /* SekenSDK.framework */; };
+		36DBACAD1F8740BC00D7D0EA /* SekenSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 36DBAC971F8740BC00D7D0EA /* SekenSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		36DBACBB1F87426900D7D0EA /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBACBA1F87426900D7D0EA /* Image.swift */; };
+		36DBACBD1F87430400D7D0EA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBACBC1F87430400D7D0EA /* User.swift */; };
+		36DBACBF1F87434800D7D0EA /* SekenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBACBE1F87434800D7D0EA /* SekenAPI.swift */; };
+		36DBACC11F87440F00D7D0EA /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBACC01F87440F00D7D0EA /* Device.swift */; };
+		36DBACC31F87445500D7D0EA /* EnvironmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBACC21F87445500D7D0EA /* EnvironmentManager.swift */; };
+		36DBACC51F87451700D7D0EA /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBACC41F87451700D7D0EA /* AppConstants.swift */; };
+		36DBACC81F87493400D7D0EA /* SanFranciscoFont-master in Resources */ = {isa = PBXBuildFile; fileRef = 36DBACC71F87493400D7D0EA /* SanFranciscoFont-master */; };
+		36DBACCA1F874DC800D7D0EA /* SekenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBACC91F874DC800D7D0EA /* SekenViewController.swift */; };
+		36DBACCD1F8753D600D7D0EA /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBACCC1F8753D600D7D0EA /* StartViewController.swift */; };
+		36DBACCF1F8755ED00D7D0EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36DBACCE1F8755ED00D7D0EA /* Main.storyboard */; };
+		5C2A779CC6C6F5354FAE7041 /* Pods_Seken.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F47AC12128E1F5C74E02AE2 /* Pods_Seken.framework */; };
+		C2417E112AD5595847473EF5 /* Pods_SekenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861163EFD0E7E714A84E5D59 /* Pods_SekenUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,13 +49,48 @@
 			remoteGlobalIDString = 36DBAC541F873B2900D7D0EA;
 			remoteInfo = Seken;
 		};
+		36DBACA11F8740BC00D7D0EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36DBAC4D1F873B2900D7D0EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 36DBAC961F8740BC00D7D0EA;
+			remoteInfo = SekenSDK;
+		};
+		36DBACA31F8740BC00D7D0EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36DBAC4D1F873B2900D7D0EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 36DBAC541F873B2900D7D0EA;
+			remoteInfo = Seken;
+		};
+		36DBACAA1F8740BC00D7D0EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36DBAC4D1F873B2900D7D0EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 36DBAC961F8740BC00D7D0EA;
+			remoteInfo = SekenSDK;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		36DBACB11F8740BC00D7D0EA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				36DBACAD1F8740BC00D7D0EA /* SekenSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0CDF996A4044BDED95EA1E03 /* Pods-SekenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SekenTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SekenTests/Pods-SekenTests.release.xcconfig"; sourceTree = "<group>"; };
+		0F47AC12128E1F5C74E02AE2 /* Pods_Seken.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Seken.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36DBAC551F873B2900D7D0EA /* Seken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36DBAC581F873B2900D7D0EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		36DBAC5A1F873B2900D7D0EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		36DBAC5D1F873B2900D7D0EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		36DBAC601F873B2900D7D0EA /* Seken.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Seken.xcdatamodel; sourceTree = "<group>"; };
 		36DBAC621F873B2900D7D0EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36DBAC651F873B2900D7D0EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +101,31 @@
 		36DBAC771F873B2900D7D0EA /* SekenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SekenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36DBAC7B1F873B2900D7D0EA /* SekenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SekenUITests.swift; sourceTree = "<group>"; };
 		36DBAC7D1F873B2900D7D0EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36DBAC901F87401600D7D0EA /* AlertViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewManager.swift; sourceTree = "<group>"; };
+		36DBAC971F8740BC00D7D0EA /* SekenSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SekenSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36DBAC991F8740BC00D7D0EA /* SekenSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SekenSDK.h; sourceTree = "<group>"; };
+		36DBAC9A1F8740BC00D7D0EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36DBAC9F1F8740BC00D7D0EA /* SekenSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SekenSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		36DBACA61F8740BC00D7D0EA /* SekenSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SekenSDKTests.swift; sourceTree = "<group>"; };
+		36DBACA81F8740BC00D7D0EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36DBACBA1F87426900D7D0EA /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		36DBACBC1F87430400D7D0EA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		36DBACBE1F87434800D7D0EA /* SekenAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SekenAPI.swift; sourceTree = "<group>"; };
+		36DBACC01F87440F00D7D0EA /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		36DBACC21F87445500D7D0EA /* EnvironmentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentManager.swift; sourceTree = "<group>"; };
+		36DBACC41F87451700D7D0EA /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		36DBACC61F87458F00D7D0EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		36DBACC71F87493400D7D0EA /* SanFranciscoFont-master */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "SanFranciscoFont-master"; sourceTree = "<group>"; };
+		36DBACC91F874DC800D7D0EA /* SekenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SekenViewController.swift; sourceTree = "<group>"; };
+		36DBACCC1F8753D600D7D0EA /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		36DBACCE1F8755ED00D7D0EA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		46A272CC25B1F54AE2B7F17B /* Pods-Seken.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seken.release.xcconfig"; path = "Pods/Target Support Files/Pods-Seken/Pods-Seken.release.xcconfig"; sourceTree = "<group>"; };
+		54504536C1A6796F0AD2082C /* Pods_SekenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SekenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56E467737B364734103022FA /* Pods-Seken.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seken.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Seken/Pods-Seken.debug.xcconfig"; sourceTree = "<group>"; };
+		861163EFD0E7E714A84E5D59 /* Pods_SekenUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SekenUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9324F6E96629CA80B73CD93A /* Pods-SekenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SekenTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SekenTests/Pods-SekenTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9940DCD08FD5B40C8A9F3C5F /* Pods-SekenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SekenUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SekenUITests/Pods-SekenUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C0DEE0155AEDA96D5729C1BF /* Pods-SekenUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SekenUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SekenUITests/Pods-SekenUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +133,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36DBACAC1F8740BC00D7D0EA /* SekenSDK.framework in Frameworks */,
+				5C2A779CC6C6F5354FAE7041 /* Pods_Seken.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FA38701D436CF6C83F215A8 /* Pods_SekenTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,19 +150,52 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2417E112AD5595847473EF5 /* Pods_SekenUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36DBAC931F8740BC00D7D0EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36DBAC9C1F8740BC00D7D0EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36DBACA01F8740BC00D7D0EA /* SekenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D26207D701AC1D760BBF4F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				56E467737B364734103022FA /* Pods-Seken.debug.xcconfig */,
+				46A272CC25B1F54AE2B7F17B /* Pods-Seken.release.xcconfig */,
+				9324F6E96629CA80B73CD93A /* Pods-SekenTests.debug.xcconfig */,
+				0CDF996A4044BDED95EA1E03 /* Pods-SekenTests.release.xcconfig */,
+				9940DCD08FD5B40C8A9F3C5F /* Pods-SekenUITests.debug.xcconfig */,
+				C0DEE0155AEDA96D5729C1BF /* Pods-SekenUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		36DBAC4C1F873B2900D7D0EA = {
 			isa = PBXGroup;
 			children = (
 				36DBAC571F873B2900D7D0EA /* Seken */,
 				36DBAC6F1F873B2900D7D0EA /* SekenTests */,
 				36DBAC7A1F873B2900D7D0EA /* SekenUITests */,
+				36DBAC981F8740BC00D7D0EA /* SekenSDK */,
+				36DBACA51F8740BC00D7D0EA /* SekenSDKTests */,
 				36DBAC561F873B2900D7D0EA /* Products */,
+				1D26207D701AC1D760BBF4F0 /* Pods */,
+				C460336D82B16BDD515362AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +205,8 @@
 				36DBAC551F873B2900D7D0EA /* Seken.app */,
 				36DBAC6C1F873B2900D7D0EA /* SekenTests.xctest */,
 				36DBAC771F873B2900D7D0EA /* SekenUITests.xctest */,
+				36DBAC971F8740BC00D7D0EA /* SekenSDK.framework */,
+				36DBAC9F1F8740BC00D7D0EA /* SekenSDKTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,10 +214,15 @@
 		36DBAC571F873B2900D7D0EA /* Seken */ = {
 			isa = PBXGroup;
 			children = (
+				36DBAC8F1F873F6400D7D0EA /* ViewControllers */,
+				36DBAC8E1F873F4500D7D0EA /* Helpers */,
+				36DBAC8D1F873F1B00D7D0EA /* Managers */,
+				36DBAC8B1F873EC200D7D0EA /* Views */,
+				36DBAC8A1F873E8300D7D0EA /* Extensions */,
+				36DBAC891F873E3200D7D0EA /* CustomFonts */,
 				36DBAC581F873B2900D7D0EA /* AppDelegate.swift */,
-				36DBAC5A1F873B2900D7D0EA /* ViewController.swift */,
-				36DBAC5C1F873B2900D7D0EA /* Main.storyboard */,
 				36DBAC621F873B2900D7D0EA /* Assets.xcassets */,
+				36DBACC61F87458F00D7D0EA /* GoogleService-Info.plist */,
 				36DBAC641F873B2900D7D0EA /* LaunchScreen.storyboard */,
 				36DBAC671F873B2900D7D0EA /* Info.plist */,
 				36DBAC5F1F873B2900D7D0EA /* Seken.xcdatamodeld */,
@@ -128,20 +248,173 @@
 			path = SekenUITests;
 			sourceTree = "<group>";
 		};
+		36DBAC891F873E3200D7D0EA /* CustomFonts */ = {
+			isa = PBXGroup;
+			children = (
+				36DBACC71F87493400D7D0EA /* SanFranciscoFont-master */,
+			);
+			path = CustomFonts;
+			sourceTree = "<group>";
+		};
+		36DBAC8A1F873E8300D7D0EA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		36DBAC8B1F873EC200D7D0EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				36DBACCE1F8755ED00D7D0EA /* Main.storyboard */,
+				36DBAC8C1F873EDA00D7D0EA /* CustomViews */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		36DBAC8C1F873EDA00D7D0EA /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		36DBAC8D1F873F1B00D7D0EA /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				36DBAC901F87401600D7D0EA /* AlertViewManager.swift */,
+				36DBACC21F87445500D7D0EA /* EnvironmentManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		36DBAC8E1F873F4500D7D0EA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				36DBACC41F87451700D7D0EA /* AppConstants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		36DBAC8F1F873F6400D7D0EA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				36DBACCB1F8753B800D7D0EA /* Signup */,
+				36DBACC91F874DC800D7D0EA /* SekenViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		36DBAC981F8740BC00D7D0EA /* SekenSDK */ = {
+			isa = PBXGroup;
+			children = (
+				36DBACB71F87415B00D7D0EA /* API */,
+				36DBACB61F87413300D7D0EA /* Models */,
+				36DBACB51F87412600D7D0EA /* Managers */,
+				36DBAC991F8740BC00D7D0EA /* SekenSDK.h */,
+				36DBAC9A1F8740BC00D7D0EA /* Info.plist */,
+			);
+			path = SekenSDK;
+			sourceTree = "<group>";
+		};
+		36DBACA51F8740BC00D7D0EA /* SekenSDKTests */ = {
+			isa = PBXGroup;
+			children = (
+				36DBACA61F8740BC00D7D0EA /* SekenSDKTests.swift */,
+				36DBACA81F8740BC00D7D0EA /* Info.plist */,
+			);
+			path = SekenSDKTests;
+			sourceTree = "<group>";
+		};
+		36DBACB51F87412600D7D0EA /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		36DBACB61F87413300D7D0EA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				36DBACB91F87424400D7D0EA /* User */,
+				36DBACB81F87422900D7D0EA /* Genral */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		36DBACB71F87415B00D7D0EA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				36DBACBE1F87434800D7D0EA /* SekenAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		36DBACB81F87422900D7D0EA /* Genral */ = {
+			isa = PBXGroup;
+			children = (
+				36DBACBA1F87426900D7D0EA /* Image.swift */,
+			);
+			path = Genral;
+			sourceTree = "<group>";
+		};
+		36DBACB91F87424400D7D0EA /* User */ = {
+			isa = PBXGroup;
+			children = (
+				36DBACBC1F87430400D7D0EA /* User.swift */,
+				36DBACC01F87440F00D7D0EA /* Device.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		36DBACCB1F8753B800D7D0EA /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				36DBACCC1F8753D600D7D0EA /* StartViewController.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		C460336D82B16BDD515362AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F47AC12128E1F5C74E02AE2 /* Pods_Seken.framework */,
+				54504536C1A6796F0AD2082C /* Pods_SekenTests.framework */,
+				861163EFD0E7E714A84E5D59 /* Pods_SekenUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		36DBAC941F8740BC00D7D0EA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36DBACA91F8740BC00D7D0EA /* SekenSDK.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		36DBAC541F873B2900D7D0EA /* Seken */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36DBAC801F873B2900D7D0EA /* Build configuration list for PBXNativeTarget "Seken" */;
 			buildPhases = (
+				061E80FEA14CEBA5DAE33D6C /* [CP] Check Pods Manifest.lock */,
 				36DBAC511F873B2900D7D0EA /* Sources */,
 				36DBAC521F873B2900D7D0EA /* Frameworks */,
 				36DBAC531F873B2900D7D0EA /* Resources */,
+				FEE0123E3E38E45B03A292D5 /* [CP] Embed Pods Frameworks */,
+				E916D7F36EDE5C7A52FFD6AD /* [CP] Copy Pods Resources */,
+				36DBACB11F8740BC00D7D0EA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				36DBACAB1F8740BC00D7D0EA /* PBXTargetDependency */,
 			);
 			name = Seken;
 			productName = Seken;
@@ -152,9 +425,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36DBAC831F873B2900D7D0EA /* Build configuration list for PBXNativeTarget "SekenTests" */;
 			buildPhases = (
+				FC06DBF8960C205F2FC870ED /* [CP] Check Pods Manifest.lock */,
 				36DBAC681F873B2900D7D0EA /* Sources */,
 				36DBAC691F873B2900D7D0EA /* Frameworks */,
 				36DBAC6A1F873B2900D7D0EA /* Resources */,
+				24041D11CF06106844DC2D00 /* [CP] Embed Pods Frameworks */,
+				CFF758A321899DB19A43A598 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +446,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36DBAC861F873B2900D7D0EA /* Build configuration list for PBXNativeTarget "SekenUITests" */;
 			buildPhases = (
+				9193AA4ADAB3634620855B6A /* [CP] Check Pods Manifest.lock */,
 				36DBAC731F873B2900D7D0EA /* Sources */,
 				36DBAC741F873B2900D7D0EA /* Frameworks */,
 				36DBAC751F873B2900D7D0EA /* Resources */,
+				82E9B4C7538ED6AD4D645AC3 /* [CP] Embed Pods Frameworks */,
+				60A5F3C95CCE358943D8F798 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -183,6 +462,43 @@
 			productName = SekenUITests;
 			productReference = 36DBAC771F873B2900D7D0EA /* SekenUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		36DBAC961F8740BC00D7D0EA /* SekenSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36DBACAE1F8740BC00D7D0EA /* Build configuration list for PBXNativeTarget "SekenSDK" */;
+			buildPhases = (
+				36DBAC921F8740BC00D7D0EA /* Sources */,
+				36DBAC931F8740BC00D7D0EA /* Frameworks */,
+				36DBAC941F8740BC00D7D0EA /* Headers */,
+				36DBAC951F8740BC00D7D0EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SekenSDK;
+			productName = SekenSDK;
+			productReference = 36DBAC971F8740BC00D7D0EA /* SekenSDK.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		36DBAC9E1F8740BC00D7D0EA /* SekenSDKTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36DBACB21F8740BC00D7D0EA /* Build configuration list for PBXNativeTarget "SekenSDKTests" */;
+			buildPhases = (
+				36DBAC9B1F8740BC00D7D0EA /* Sources */,
+				36DBAC9C1F8740BC00D7D0EA /* Frameworks */,
+				36DBAC9D1F8740BC00D7D0EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				36DBACA21F8740BC00D7D0EA /* PBXTargetDependency */,
+				36DBACA41F8740BC00D7D0EA /* PBXTargetDependency */,
+			);
+			name = SekenSDKTests;
+			productName = SekenSDKTests;
+			productReference = 36DBAC9F1F8740BC00D7D0EA /* SekenSDKTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -208,6 +524,16 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 36DBAC541F873B2900D7D0EA;
 					};
+					36DBAC961F8740BC00D7D0EA = {
+						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+					36DBAC9E1F8740BC00D7D0EA = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 36DBAC541F873B2900D7D0EA;
+					};
 				};
 			};
 			buildConfigurationList = 36DBAC501F873B2900D7D0EA /* Build configuration list for PBXProject "Seken" */;
@@ -226,6 +552,8 @@
 				36DBAC541F873B2900D7D0EA /* Seken */,
 				36DBAC6B1F873B2900D7D0EA /* SekenTests */,
 				36DBAC761F873B2900D7D0EA /* SekenUITests */,
+				36DBAC961F8740BC00D7D0EA /* SekenSDK */,
+				36DBAC9E1F8740BC00D7D0EA /* SekenSDKTests */,
 			);
 		};
 /* End PBXProject section */
@@ -236,8 +564,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				36DBAC661F873B2900D7D0EA /* LaunchScreen.storyboard in Resources */,
+				36DBACC81F87493400D7D0EA /* SanFranciscoFont-master in Resources */,
 				36DBAC631F873B2900D7D0EA /* Assets.xcassets in Resources */,
-				36DBAC5E1F873B2900D7D0EA /* Main.storyboard in Resources */,
+				36DBACCF1F8755ED00D7D0EA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,16 +584,205 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		36DBAC951F8740BC00D7D0EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36DBAC9D1F8740BC00D7D0EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		061E80FEA14CEBA5DAE33D6C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Seken-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		24041D11CF06106844DC2D00 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SekenTests/Pods-SekenTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60A5F3C95CCE358943D8F798 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SekenUITests/Pods-SekenUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82E9B4C7538ED6AD4D645AC3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SekenUITests/Pods-SekenUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9193AA4ADAB3634620855B6A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SekenUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFF758A321899DB19A43A598 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SekenTests/Pods-SekenTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E916D7F36EDE5C7A52FFD6AD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Seken/Pods-Seken-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Seken/Pods-Seken-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC06DBF8960C205F2FC870ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SekenTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEE0123E3E38E45B03A292D5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Seken/Pods-Seken-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Seken/Pods-Seken-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		36DBAC511F873B2900D7D0EA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36DBAC5B1F873B2900D7D0EA /* ViewController.swift in Sources */,
+				36DBACCD1F8753D600D7D0EA /* StartViewController.swift in Sources */,
+				36DBACC51F87451700D7D0EA /* AppConstants.swift in Sources */,
 				36DBAC591F873B2900D7D0EA /* AppDelegate.swift in Sources */,
+				36DBACCA1F874DC800D7D0EA /* SekenViewController.swift in Sources */,
+				36DBACC31F87445500D7D0EA /* EnvironmentManager.swift in Sources */,
 				36DBAC611F873B2900D7D0EA /* Seken.xcdatamodeld in Sources */,
+				36DBAC911F87401700D7D0EA /* AlertViewManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +802,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		36DBAC921F8740BC00D7D0EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36DBACBD1F87430400D7D0EA /* User.swift in Sources */,
+				36DBACBB1F87426900D7D0EA /* Image.swift in Sources */,
+				36DBACBF1F87434800D7D0EA /* SekenAPI.swift in Sources */,
+				36DBACC11F87440F00D7D0EA /* Device.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36DBAC9B1F8740BC00D7D0EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36DBACA71F8740BC00D7D0EA /* SekenSDKTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -297,17 +834,24 @@
 			target = 36DBAC541F873B2900D7D0EA /* Seken */;
 			targetProxy = 36DBAC781F873B2900D7D0EA /* PBXContainerItemProxy */;
 		};
+		36DBACA21F8740BC00D7D0EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 36DBAC961F8740BC00D7D0EA /* SekenSDK */;
+			targetProxy = 36DBACA11F8740BC00D7D0EA /* PBXContainerItemProxy */;
+		};
+		36DBACA41F8740BC00D7D0EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 36DBAC541F873B2900D7D0EA /* Seken */;
+			targetProxy = 36DBACA31F8740BC00D7D0EA /* PBXContainerItemProxy */;
+		};
+		36DBACAB1F8740BC00D7D0EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 36DBAC961F8740BC00D7D0EA /* SekenSDK */;
+			targetProxy = 36DBACAA1F8740BC00D7D0EA /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		36DBAC5C1F873B2900D7D0EA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				36DBAC5D1F873B2900D7D0EA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		36DBAC641F873B2900D7D0EA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -428,7 +972,9 @@
 		};
 		36DBAC811F873B2900D7D0EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56E467737B364734103022FA /* Pods-Seken.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Seken/Info.plist;
@@ -442,7 +988,9 @@
 		};
 		36DBAC821F873B2900D7D0EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46A272CC25B1F54AE2B7F17B /* Pods-Seken.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Seken/Info.plist;
@@ -456,6 +1004,7 @@
 		};
 		36DBAC841F873B2900D7D0EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9324F6E96629CA80B73CD93A /* Pods-SekenTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -472,6 +1021,7 @@
 		};
 		36DBAC851F873B2900D7D0EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CDF996A4044BDED95EA1E03 /* Pods-SekenTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -488,6 +1038,7 @@
 		};
 		36DBAC871F873B2900D7D0EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9940DCD08FD5B40C8A9F3C5F /* Pods-SekenUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -503,6 +1054,7 @@
 		};
 		36DBAC881F873B2900D7D0EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0DEE0155AEDA96D5729C1BF /* Pods-SekenUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -513,6 +1065,85 @@
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Seken;
+			};
+			name = Release;
+		};
+		36DBACAF1F8740BC00D7D0EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SekenSDK/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.seken.SekenSDK;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		36DBACB01F8740BC00D7D0EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SekenSDK/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.seken.SekenSDK;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		36DBACB31F8740BC00D7D0EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SekenSDKTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.seken.SekenSDKTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Seken.app/Seken";
+			};
+			name = Debug;
+		};
+		36DBACB41F8740BC00D7D0EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SekenSDKTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.seken.SekenSDKTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Seken.app/Seken";
 			};
 			name = Release;
 		};
@@ -551,6 +1182,24 @@
 			buildConfigurations = (
 				36DBAC871F873B2900D7D0EA /* Debug */,
 				36DBAC881F873B2900D7D0EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		36DBACAE1F8740BC00D7D0EA /* Build configuration list for PBXNativeTarget "SekenSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36DBACAF1F8740BC00D7D0EA /* Debug */,
+				36DBACB01F8740BC00D7D0EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		36DBACB21F8740BC00D7D0EA /* Build configuration list for PBXNativeTarget "SekenSDKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36DBACB31F8740BC00D7D0EA /* Debug */,
+				36DBACB41F8740BC00D7D0EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
