@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2FA38701D436CF6C83F215A8 /* Pods_SekenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54504536C1A6796F0AD2082C /* Pods_SekenTests.framework */; };
+		369F517E1F8B76CE00A0FF57 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369F517D1F8B76CE00A0FF57 /* OTPViewController.swift */; };
+		36B3CE561F8B9CCD004C6CB4 /* SekenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B3CE551F8B9CCD004C6CB4 /* SekenButton.swift */; };
 		36DBAC591F873B2900D7D0EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBAC581F873B2900D7D0EA /* AppDelegate.swift */; };
 		36DBAC611F873B2900D7D0EA /* Seken.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36DBAC5F1F873B2900D7D0EA /* Seken.xcdatamodeld */; };
 		36DBAC631F873B2900D7D0EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DBAC621F873B2900D7D0EA /* Assets.xcassets */; };
@@ -30,6 +32,12 @@
 		36DBACCA1F874DC800D7D0EA /* SekenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBACC91F874DC800D7D0EA /* SekenViewController.swift */; };
 		36DBACCD1F8753D600D7D0EA /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBACCC1F8753D600D7D0EA /* StartViewController.swift */; };
 		36DBACCF1F8755ED00D7D0EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36DBACCE1F8755ED00D7D0EA /* Main.storyboard */; };
+		36DBAD8C1F8794CC00D7D0EA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBAD8B1F8794CC00D7D0EA /* LoginViewController.swift */; };
+		36DBAD8E1F8794E100D7D0EA /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBAD8D1F8794E100D7D0EA /* SignupViewController.swift */; };
+		36FA8C141F8C9CDF003EE70B /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FA8C131F8C9CDF003EE70B /* ForgotPasswordController.swift */; };
+		36FA8C161F8CA448003EE70B /* TermsAndConditionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FA8C151F8CA448003EE70B /* TermsAndConditionsController.swift */; };
+		36FA8C181F8CB479003EE70B /* VerifyOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FA8C171F8CB479003EE70B /* VerifyOTPViewController.swift */; };
+		36FA8C1A1F8CB492003EE70B /* CreatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FA8C191F8CB492003EE70B /* CreatePasswordViewController.swift */; };
 		5C2A779CC6C6F5354FAE7041 /* Pods_Seken.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F47AC12128E1F5C74E02AE2 /* Pods_Seken.framework */; };
 		C2417E112AD5595847473EF5 /* Pods_SekenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861163EFD0E7E714A84E5D59 /* Pods_SekenUITests.framework */; };
 /* End PBXBuildFile section */
@@ -89,6 +97,8 @@
 /* Begin PBXFileReference section */
 		0CDF996A4044BDED95EA1E03 /* Pods-SekenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SekenTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SekenTests/Pods-SekenTests.release.xcconfig"; sourceTree = "<group>"; };
 		0F47AC12128E1F5C74E02AE2 /* Pods_Seken.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Seken.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		369F517D1F8B76CE00A0FF57 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		36B3CE551F8B9CCD004C6CB4 /* SekenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SekenButton.swift; sourceTree = "<group>"; };
 		36DBAC551F873B2900D7D0EA /* Seken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36DBAC581F873B2900D7D0EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36DBAC601F873B2900D7D0EA /* Seken.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Seken.xcdatamodel; sourceTree = "<group>"; };
@@ -119,6 +129,12 @@
 		36DBACC91F874DC800D7D0EA /* SekenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SekenViewController.swift; sourceTree = "<group>"; };
 		36DBACCC1F8753D600D7D0EA /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		36DBACCE1F8755ED00D7D0EA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		36DBAD8B1F8794CC00D7D0EA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		36DBAD8D1F8794E100D7D0EA /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		36FA8C131F8C9CDF003EE70B /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
+		36FA8C151F8CA448003EE70B /* TermsAndConditionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsController.swift; sourceTree = "<group>"; };
+		36FA8C171F8CB479003EE70B /* VerifyOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPViewController.swift; sourceTree = "<group>"; };
+		36FA8C191F8CB492003EE70B /* CreatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordViewController.swift; sourceTree = "<group>"; };
 		46A272CC25B1F54AE2B7F17B /* Pods-Seken.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seken.release.xcconfig"; path = "Pods/Target Support Files/Pods-Seken/Pods-Seken.release.xcconfig"; sourceTree = "<group>"; };
 		54504536C1A6796F0AD2082C /* Pods_SekenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SekenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56E467737B364734103022FA /* Pods-Seken.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seken.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Seken/Pods-Seken.debug.xcconfig"; sourceTree = "<group>"; };
@@ -259,6 +275,7 @@
 		36DBAC8A1F873E8300D7D0EA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				36B3CE551F8B9CCD004C6CB4 /* SekenButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -371,6 +388,13 @@
 			isa = PBXGroup;
 			children = (
 				36DBACCC1F8753D600D7D0EA /* StartViewController.swift */,
+				36DBAD8B1F8794CC00D7D0EA /* LoginViewController.swift */,
+				36DBAD8D1F8794E100D7D0EA /* SignupViewController.swift */,
+				369F517D1F8B76CE00A0FF57 /* OTPViewController.swift */,
+				36FA8C131F8C9CDF003EE70B /* ForgotPasswordController.swift */,
+				36FA8C151F8CA448003EE70B /* TermsAndConditionsController.swift */,
+				36FA8C171F8CB479003EE70B /* VerifyOTPViewController.swift */,
+				36FA8C191F8CB492003EE70B /* CreatePasswordViewController.swift */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -776,13 +800,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				369F517E1F8B76CE00A0FF57 /* OTPViewController.swift in Sources */,
+				36FA8C141F8C9CDF003EE70B /* ForgotPasswordController.swift in Sources */,
+				36DBAD8E1F8794E100D7D0EA /* SignupViewController.swift in Sources */,
 				36DBACCD1F8753D600D7D0EA /* StartViewController.swift in Sources */,
+				36FA8C1A1F8CB492003EE70B /* CreatePasswordViewController.swift in Sources */,
 				36DBACC51F87451700D7D0EA /* AppConstants.swift in Sources */,
 				36DBAC591F873B2900D7D0EA /* AppDelegate.swift in Sources */,
 				36DBACCA1F874DC800D7D0EA /* SekenViewController.swift in Sources */,
+				36DBAD8C1F8794CC00D7D0EA /* LoginViewController.swift in Sources */,
 				36DBACC31F87445500D7D0EA /* EnvironmentManager.swift in Sources */,
 				36DBAC611F873B2900D7D0EA /* Seken.xcdatamodeld in Sources */,
 				36DBAC911F87401700D7D0EA /* AlertViewManager.swift in Sources */,
+				36B3CE561F8B9CCD004C6CB4 /* SekenButton.swift in Sources */,
+				36FA8C161F8CA448003EE70B /* TermsAndConditionsController.swift in Sources */,
+				36FA8C181F8CB479003EE70B /* VerifyOTPViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

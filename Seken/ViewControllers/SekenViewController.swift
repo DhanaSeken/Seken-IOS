@@ -76,7 +76,7 @@ class SekenViewController: UIViewController {
     {
         //Back buttion
         let btnLeftMenu: UIButton = UIButton()
-        btnLeftMenu.setImage(UIImage(named: "back_arrow"), for: UIControlState())
+        btnLeftMenu.setImage(UIImage(named: "backBtn"), for: UIControlState())
         btnLeftMenu.addTarget(self, action: #selector(self.onClcikBack), for: UIControlEvents.touchUpInside)
         btnLeftMenu.frame = CGRect(x: 0, y: 0, width: 33/2, height: 27/2)
         let barButton = UIBarButtonItem(customView: btnLeftMenu)
@@ -88,4 +88,17 @@ class SekenViewController: UIViewController {
         _ = self.navigationController?.popViewController(animated: true)
     }
 
+}
+
+@IBDesignable extension UINavigationController {
+    @IBInspectable var barTintColor: UIColor? {
+        set {
+            guard let uiColor = newValue else { return }
+            navigationBar.barTintColor = uiColor
+        }
+        get {
+            guard let color = navigationBar.barTintColor else { return nil }
+            return color
+        }
+    }
 }

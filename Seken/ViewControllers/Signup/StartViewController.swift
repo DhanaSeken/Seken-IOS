@@ -9,7 +9,12 @@
 import UIKit
 
 class StartViewController: SekenViewController {
-
+    @IBOutlet weak var imgHeaderView: UIImageView!
+    @IBOutlet weak var lblHeader: UILabel!
+    @IBOutlet weak var lblsubHeader: UILabel!
+    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var lblDescription: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
