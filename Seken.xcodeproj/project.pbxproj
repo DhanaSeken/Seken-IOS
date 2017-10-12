@@ -97,6 +97,7 @@
 /* Begin PBXFileReference section */
 		0CDF996A4044BDED95EA1E03 /* Pods-SekenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SekenTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SekenTests/Pods-SekenTests.release.xcconfig"; sourceTree = "<group>"; };
 		0F47AC12128E1F5C74E02AE2 /* Pods_Seken.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Seken.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		361B63E91F8E52A20043B70D /* countryCodes.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = countryCodes.plist; sourceTree = "<group>"; };
 		369F517D1F8B76CE00A0FF57 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		36B3CE551F8B9CCD004C6CB4 /* SekenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SekenButton.swift; sourceTree = "<group>"; };
 		36DBAC551F873B2900D7D0EA /* Seken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seken.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,6 +202,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		361B63EC1F8F34CE0043B70D /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
 		36DBAC4C1F873B2900D7D0EA = {
 			isa = PBXGroup;
 			children = (
@@ -236,10 +244,12 @@
 				36DBAC8B1F873EC200D7D0EA /* Views */,
 				36DBAC8A1F873E8300D7D0EA /* Extensions */,
 				36DBAC891F873E3200D7D0EA /* CustomFonts */,
+				361B63EC1F8F34CE0043B70D /* ThirdParty */,
 				36DBAC581F873B2900D7D0EA /* AppDelegate.swift */,
 				36DBAC621F873B2900D7D0EA /* Assets.xcassets */,
 				36DBACC61F87458F00D7D0EA /* GoogleService-Info.plist */,
 				36DBAC641F873B2900D7D0EA /* LaunchScreen.storyboard */,
+				361B63E91F8E52A20043B70D /* countryCodes.plist */,
 				36DBAC671F873B2900D7D0EA /* Info.plist */,
 				36DBAC5F1F873B2900D7D0EA /* Seken.xcdatamodeld */,
 			);
@@ -774,6 +784,9 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/MICountryPicker/MICountryPicker.framework",
+				"${BUILT_PRODUCTS_DIR}/MRCountryPicker/MRCountryPicker.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -787,6 +800,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MICountryPicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MRCountryPicker.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

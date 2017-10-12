@@ -59,12 +59,28 @@ PODS:
   - GTMSessionFetcher/Core (1.1.12)
   - GTMSessionFetcher/Full (1.1.12):
     - GTMSessionFetcher/Core (= 1.1.12)
+  - IQKeyboardManagerSwift (5.0.3)
+  - MICountryPicker (0.2.2)
+  - MRCountryPicker (0.0.7)
 
 DEPENDENCIES:
   - FacebookCore
   - FacebookLogin
   - FacebookShare
   - Google/SignIn
+  - IQKeyboardManagerSwift
+  - MICountryPicker (from `https://github.com/mustafaibrahim989/MICountryPicker.git`, branch `master`)
+  - MRCountryPicker (~> 0.0.7)
+
+EXTERNAL SOURCES:
+  MICountryPicker:
+    :branch: master
+    :git: https://github.com/mustafaibrahim989/MICountryPicker.git
+
+CHECKOUT OPTIONS:
+  MICountryPicker:
+    :commit: 43a40241da087c81c4f26715283c12ac1335ebb2
+    :git: https://github.com/mustafaibrahim989/MICountryPicker.git
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -82,7 +98,10 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: be83fd28d63ae3087e7d351b1f39c1a7e24ab6e7
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
+  IQKeyboardManagerSwift: e257e513744cf32123eca7061272acea0246fc83
+  MICountryPicker: 82122c5f918bc9f9e2c510793fffd188dc8d38ce
+  MRCountryPicker: 75edb510153ef446ded70890bc02140a757961dc
 
-PODFILE CHECKSUM: 729a95079a605c6e04ae41ac03819651476ee116
+PODFILE CHECKSUM: a8c62bedda72e8b0c7ed2bfe376d9dda1aa7ae5f
 
 COCOAPODS: 1.3.1
