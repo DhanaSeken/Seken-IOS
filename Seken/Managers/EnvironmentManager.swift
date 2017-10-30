@@ -12,25 +12,25 @@ import SekenSDK
 class EnvironmentManager {
     private init() {}
     public static let shared = EnvironmentManager()
-    public var selectedEnvironment: Environment = .PROD
+    public var selectedEnvironment: Environment = .prod
     
     func showEnvironmentChooser() {
         let development = UIAlertAction.init(title: "Development", style: .default, handler: {
             action in
             
-            self.selectedEnvironment = .DEV
+            self.selectedEnvironment = .dev
         })
         
         let staging = UIAlertAction.init(title: "Staging", style: .default, handler: {
             action in
             
-            self.selectedEnvironment = .STAGING
+            self.selectedEnvironment = .staging
         })
         
         let production = UIAlertAction.init(title: "Production", style: .default, handler: {
             action in
             
-            self.selectedEnvironment = .PROD
+            self.selectedEnvironment = .prod
         })
         
         AlertViewManager.shared.ShowAlert(title: "", message: "Choose your Environment", actions: [development, staging, production])

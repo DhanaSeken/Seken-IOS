@@ -8,30 +8,30 @@
 
 import Foundation
 public enum HTTPMethod: Int  {
-    case GET
-    case POST
-    case PATCH
-    case PUT
-    case DELETE
+    case get
+    case post
+    case patch
+    case put
+    case delete
 }
 
 public enum Environment: Int  {
-    case PROD
-    case DEV
-    case QA
-    case STAGING
+    case prod
+    case dev
+    case qa
+    case staging
 }
 
 public class SekenAPI {
-    private let webServiceURLs = ["https://admin-dev.zaggle.in/api/v1/", // PROD
-        "https://admin-dev.zaggle.in/api/v1/", // DEV
-        "https://admin-dev.zaggle.in/api/v1/", // QA
-        "https://admin-dev.zaggle.in/api/v1/"] // STAGING
+    private let webServiceURLs = ["http://dev.seken.com/seken-qa/mobile/api/v1/", // PROD
+        "http://dev.seken.com/seken-qa/mobile/api/v1/", // DEV
+        "http://dev.seken.com/seken-qa/mobile/api/v1/", // QA
+        "http://dev.seken.com/seken-qa/mobile/api/v1/"] // STAGING
     
     private let httpMethodString = ["GET", "POST", "PATCH", "PUT","DELETE"]
-    var env: Environment = .PROD
+    var env: Environment = .prod
     
-    private var sessionToken: String?
+    public var sessionToken: String?
     private let TIMEOUT = 60
     
     private init() {}
@@ -65,7 +65,7 @@ public class SekenAPI {
             urlRequest.httpMethod = httpMethodString[type.rawValue]
             
             if let sessionToken = sessionToken {
-                urlRequest.setValue(sessionToken, forHTTPHeaderField:"token")
+                urlRequest.setValue(sessionToken, forHTTPHeaderField:"X-CSRF-Token")
             }
             
             urlRequest.setValue(String(format: "%lu", UInt64(content.count)), forHTTPHeaderField:"Content-Length")

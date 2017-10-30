@@ -9,8 +9,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Medium</string>
+        </array>
         <array key="SanFranciscoDisplay-Regular.otf">
             <string>SanFranciscoDisplay-Regular</string>
+        </array>
+        <array key="SanFranciscoDisplay-Semibold.otf">
+            <string>SanFranciscoDisplay-Semibold</string>
         </array>
     </customFonts>
     <scenes>
@@ -28,13 +34,47 @@
                                     <constraint firstAttribute="height" constant="33" id="JHu-rH-JaT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="21"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seken" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3W-ly-XLh">
+                                <rect key="frame" x="55.5" y="367" width="264" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="MTR-wC-lE7"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="264" id="cmn-Gz-SWn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Semibold" family="San Francisco Display" pointSize="51"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XY-rr-cwZ">
+                                <rect key="frame" x="14" y="320" width="347" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="347" id="ApL-ld-RYx"/>
+                                    <constraint firstAttribute="height" constant="39" id="iJx-eH-6VM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="44"/>
+                                <color key="textColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="1GG-m5-Bcr">
+                                <rect key="frame" x="93" y="52" width="189" height="234"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="189" id="AEf-Nc-Hjq"/>
+                                    <constraint firstAttribute="height" constant="234" id="saH-8L-ARx"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.60784313729999995" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="1GG-m5-Bcr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="61w-Eb-yBr"/>
+                            <constraint firstItem="p3W-ly-XLh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="7L8-VP-3yV"/>
+                            <constraint firstItem="3XY-rr-cwZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="300" id="C0R-jQ-Qmf"/>
+                            <constraint firstItem="p3W-ly-XLh" firstAttribute="top" secondItem="3XY-rr-cwZ" secondAttribute="bottom" constant="8" id="DJe-g8-gHy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="p0a-56-uHb" secondAttribute="bottom" constant="22" id="ZE9-Ni-XUf"/>
+                            <constraint firstItem="3XY-rr-cwZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eLu-Pg-aFp"/>
+                            <constraint firstItem="1GG-m5-Bcr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="p6f-q7-XcL"/>
                             <constraint firstItem="p0a-56-uHb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="11" id="tKI-Pu-k3Y"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p0a-56-uHb" secondAttribute="trailing" constant="12" id="voY-iX-gd4"/>
                         </constraints>
@@ -46,4 +86,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logo" width="69" height="136"/>
+    </resources>
 </document>

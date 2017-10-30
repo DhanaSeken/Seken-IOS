@@ -8,19 +8,58 @@
 
 import UIKit
 import CoreData
+import FacebookCore
+import FacebookLogin
+import GoogleSignIn
 import IQKeyboardManagerSwift
 
+
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
+   
+    
+   
+    
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        GIDSignIn.sharedInstance().clientID = Constants.GoogleSignupKeys.ClientID
+        GIDSignIn.sharedInstance().delegate = self as GIDSignInDelegate
         IQKeyboardManager.sharedManager().enable = true
         return true
     }
+    
+    
+    func presentViewController() {
+        
+        let boolValue:Bool = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
+        if !boolValue
+        {
+            self.showLoginController()
+        }
+        else
+        {
+          self.showDashBoard()
+        }
+    }
+    
+    func showLoginController()  {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "StartViewController") as UIViewController
+        let navVc = UINavigationController.init(rootViewController: vc)
+        self.window?.rootViewController = navVc
+    }
+    func showDashBoard()  {
+        let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DashBoardViewController") as UIViewController
+         let navVc = UINavigationController.init(rootViewController: vc)
+          self.window?.rootViewController = navVc
+    }
+    
+   
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -89,6 +128,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    
+    //MARK: FaceBook Login
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return SDKApplicationDelegate.shared.application(application, open: url)
+    }
+    
+    
+    func application(_ app: UIApplication,
+                     open url: URL,
+                     options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        
+        if(url.scheme!.isEqual(Constants.FaceBookSignuppKeys.FBID)) {
+            return SDKApplicationDelegate.shared.application(app, open: url, options: options)
+            
+        } else {
+            return GIDSignIn.sharedInstance().handle(url as URL!,
+                                                     sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String!,
+                                                     annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        }
+    }
+    
+    //MARK:Google sign Delegate
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        
     }
 
 }

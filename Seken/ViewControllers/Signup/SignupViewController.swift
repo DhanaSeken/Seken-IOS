@@ -7,23 +7,143 @@
 //
 
 import UIKit
+import MICountryPicker
+import SekenSDK
 
-class SignupViewController: SekenViewController {
 
+class SignupViewController: SekenViewController,ContryCodeModalVCDelegate,OTPViewControllerCDelegate {
+    
+   func sendCountryImag(img:UIImage,countryCode:String) {
+        self.countryCode.setImage(img, for: .normal)
+        self.countryCodeStr = countryCode
+    }
+    
+    func pushDashboardVC()  {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.showDashBoard()
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Dashboard", bundle:nil)
+//        let dashboardVC = storyBoard.instantiateViewController(withIdentifier: "DashBoardViewController") as! DashBoardViewController
+//        self.navigationController?.pushViewController(dashboardVC, animated: true)
+       // self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    
+    @IBOutlet weak var imgHeader: UIImageView!
+    @IBOutlet weak var txtFullName: UITextField!
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtPhoneNumber: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var txtReferralCode: UITextField!
+    @IBOutlet weak var btnShow: UIButton!
+    @IBOutlet weak var btnSignUp: SekenButton!
+    @IBOutlet weak var btnSignIn: UIButton!
+    @IBOutlet weak var lblSignUp: UILabel!
+    @IBOutlet weak var lblAlready: UILabel!
+    @IBOutlet weak var lblTerams: UILabel!
+    @IBOutlet weak var btnTrerms: UIButton!
+    @IBOutlet weak var countryCode: NiceButton!
+    var countryCodeStr:String = ""
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
          self.title = "Signup"
          self.setBackBarButtonCustom()
+         txtPassword.isSecureTextEntry = true;
+        self.countryCodeStr = "966"
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func showButtonCliked(_ sender: Any) {
+        
+        let buttonTitle = (sender as AnyObject).title(for: .normal)
+        if buttonTitle == "Show" {
+            txtPassword.isSecureTextEntry = false;
+            self.btnShow.setTitle("Hide", for: .normal);
+        }else {
+            txtPassword.isSecureTextEntry = true;
+            self.btnShow.setTitle("Show", for: .normal);
+        }
     }
     
-
+    @IBAction func signupButtonCliked(_ sender: Any) {
+        
+          if let userName = self.txtFullName.text, userName.characters.count > 0, let email = self.txtEmail.text, email.characters.count > 0,let phonenumber = self.txtPhoneNumber.text, phonenumber.characters.count > 0,let password = self.txtPassword.text, password.characters.count > 0 {
+            if (phonenumber.characters.count == 10 && self.isPasswordValid(password) && self.isValidEmail(testStr: email) ) {
+                self.showActivityIndicator()
+                UserAPI.sharedAPI.performSignup(mail: email, password: password, fieldPhoneNumber: String(format: "%@%@",self.countryCodeStr,phonenumber), fieldFullName: userName, referalCode: self.getReferalCode(), fieldDeviceType: "ios", method: "POST", successHandler: {
+                    self.hideActivityIndicator()
+                    self.PresentOTPModal()
+                    
+                }, failureHandler: { errorDescrpition in
+                    self.hideActivityIndicator()
+                    AlertViewManager.shared.ShowOkAlert(title: "Error!", message: errorDescrpition, handler: nil)
+                }, env: .dev)
+            }else {
+                 AlertViewManager.shared.ShowOkAlert(title: "Error!", message: "phone number should be 10 numbers", handler: nil)
+            }
+           
+            
+            
+             }else {
+             AlertViewManager.shared.ShowOkAlert(title: "Error!", message: "username,email,phonenumber and password should not be empty", handler: nil)
+            
+            }
+        
+    }
+    
+    func PresentOTPModal() {
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let otpViewController = storyBoard.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
+        otpViewController.phoneNumber = String(format: "%@%@",self.countryCodeStr,self.txtPhoneNumber.text!)
+        otpViewController.email = self.txtEmail.text!
+        otpViewController.password = self.txtPassword.text!
+        otpViewController.delegate = self;
+        self.present(otpViewController, animated:true, completion:nil)
+        
+        
+    }
+    func isPasswordValid(_ password : String) -> Bool{
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
+        return passwordTest.evaluate(with: password)
+    }
+    
+    func isValidEmail(testStr:String) -> Bool {
+        // print("validate calendar: \(testStr)")
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
+    }
+    
+    func validate(phoneNumber: String) -> Bool {
+        let charcterSet  = NSCharacterSet(charactersIn: "+0123456789").inverted
+        let inputString = phoneNumber.components(separatedBy: charcterSet)
+        let filtered = inputString.joined(separator: "")
+        return  phoneNumber == filtered
+    }
+    
+    func getReferalCode() -> String {
+        if let text = txtReferralCode.text, text.characters.count > 0 {
+            return text
+        } else {
+            return ""
+        }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "ContryCodeModalVC"{
+            let nextScene = segue.destination as? ContryCodeModalVC
+            nextScene?.delegate = self
+        }
+        
+    }
     
 
 }
+

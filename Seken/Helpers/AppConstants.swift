@@ -16,11 +16,12 @@ struct Constants {
     }
     
     struct GoogleSignupKeys{
-        static let ClientID = "153995361747-klet1e2nrmm6vpfm02ll5ok6j73smp56.apps.googleusercontent.com"
+        static let ClientID = "186400869031-9oftial197iccnrvj9ub9vu0lrf3g0ir.apps.googleusercontent.com"
     }
     
     struct FaceBookSignuppKeys{
-        static let FBID = "fb291799221282267"
+        static let FBID = "fb1690194341050947"
+        //"fb1652633364767491"
     }
     
     struct APIS {

@@ -7,7 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180094BC1F9A1972006A7AF3 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180094BB1F9A1972006A7AF3 /* UserAPI.swift */; };
 		2FA38701D436CF6C83F215A8 /* Pods_SekenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54504536C1A6796F0AD2082C /* Pods_SekenTests.framework */; };
+		360C20E51F90D0AE00102192 /* DropDown in Resources */ = {isa = PBXBuildFile; fileRef = 360C20E41F90D0AE00102192 /* DropDown */; };
+		360C20E91F90D25200102192 /* NiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360C20E61F90D25200102192 /* NiceButton.swift */; };
+		360C20EA1F90D25200102192 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360C20E71F90D25200102192 /* MyCell.swift */; };
+		360F077B1FA2019E00414EE7 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360F077A1FA2019E00414EE7 /* Dashboard.storyboard */; };
+		360F077D1FA201D400414EE7 /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360F077C1FA201D400414EE7 /* DashBoardViewController.swift */; };
+		36108A351F9F08060000F194 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36108A341F9F08060000F194 /* UserManager.swift */; };
+		36108A371F9F08440000F194 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36108A361F9F08440000F194 /* LocationManager.swift */; };
+		368094471F96208D00A1489F /* CountryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368094461F96208D00A1489F /* CountryCode.swift */; };
+		3680944A1F9639ED00A1489F /* CountryCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368094491F9639ED00A1489F /* CountryCodeCell.swift */; };
+		3680944C1F9764D000A1489F /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3680944B1F9764D000A1489F /* StringUtils.swift */; };
+		368E16961FA4833D00FDEE30 /* SocialSignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368E16951FA4833D00FDEE30 /* SocialSignupController.swift */; };
 		369F517E1F8B76CE00A0FF57 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369F517D1F8B76CE00A0FF57 /* OTPViewController.swift */; };
 		36B3CE561F8B9CCD004C6CB4 /* SekenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B3CE551F8B9CCD004C6CB4 /* SekenButton.swift */; };
 		36DBAC591F873B2900D7D0EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBAC581F873B2900D7D0EA /* AppDelegate.swift */; };
@@ -34,6 +46,7 @@
 		36DBACCF1F8755ED00D7D0EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36DBACCE1F8755ED00D7D0EA /* Main.storyboard */; };
 		36DBAD8C1F8794CC00D7D0EA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBAD8B1F8794CC00D7D0EA /* LoginViewController.swift */; };
 		36DBAD8E1F8794E100D7D0EA /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBAD8D1F8794E100D7D0EA /* SignupViewController.swift */; };
+		36F38D861F960A8C0022505D /* ContryCodeModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F38D851F960A8C0022505D /* ContryCodeModalVC.swift */; };
 		36FA8C141F8C9CDF003EE70B /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FA8C131F8C9CDF003EE70B /* ForgotPasswordController.swift */; };
 		36FA8C161F8CA448003EE70B /* TermsAndConditionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FA8C151F8CA448003EE70B /* TermsAndConditionsController.swift */; };
 		36FA8C181F8CB479003EE70B /* VerifyOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FA8C171F8CB479003EE70B /* VerifyOTPViewController.swift */; };
@@ -97,7 +110,21 @@
 /* Begin PBXFileReference section */
 		0CDF996A4044BDED95EA1E03 /* Pods-SekenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SekenTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SekenTests/Pods-SekenTests.release.xcconfig"; sourceTree = "<group>"; };
 		0F47AC12128E1F5C74E02AE2 /* Pods_Seken.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Seken.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		180094BB1F9A1972006A7AF3 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		360C20E31F90C32500102192 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		360C20E41F90D0AE00102192 /* DropDown */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DropDown; sourceTree = "<group>"; };
+		360C20E61F90D25200102192 /* NiceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiceButton.swift; sourceTree = "<group>"; };
+		360C20E71F90D25200102192 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
+		360C20E81F90D25200102192 /* MyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
+		360F077A1FA2019E00414EE7 /* Dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		360F077C1FA201D400414EE7 /* DashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
+		36108A341F9F08060000F194 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		36108A361F9F08440000F194 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		361B63E91F8E52A20043B70D /* countryCodes.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = countryCodes.plist; sourceTree = "<group>"; };
+		368094461F96208D00A1489F /* CountryCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCode.swift; sourceTree = "<group>"; };
+		368094491F9639ED00A1489F /* CountryCodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodeCell.swift; sourceTree = "<group>"; };
+		3680944B1F9764D000A1489F /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
+		368E16951FA4833D00FDEE30 /* SocialSignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignupController.swift; sourceTree = "<group>"; };
 		369F517D1F8B76CE00A0FF57 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		36B3CE551F8B9CCD004C6CB4 /* SekenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SekenButton.swift; sourceTree = "<group>"; };
 		36DBAC551F873B2900D7D0EA /* Seken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seken.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +159,7 @@
 		36DBACCE1F8755ED00D7D0EA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		36DBAD8B1F8794CC00D7D0EA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		36DBAD8D1F8794E100D7D0EA /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		36F38D851F960A8C0022505D /* ContryCodeModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContryCodeModalVC.swift; sourceTree = "<group>"; };
 		36FA8C131F8C9CDF003EE70B /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		36FA8C151F8CA448003EE70B /* TermsAndConditionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsController.swift; sourceTree = "<group>"; };
 		36FA8C171F8CB479003EE70B /* VerifyOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPViewController.swift; sourceTree = "<group>"; };
@@ -202,11 +230,28 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		360F07771FA200E900414EE7 /* DashBoard */ = {
+			isa = PBXGroup;
+			children = (
+				360F077C1FA201D400414EE7 /* DashBoardViewController.swift */,
+			);
+			path = DashBoard;
+			sourceTree = "<group>";
+		};
 		361B63EC1F8F34CE0043B70D /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				360C20E41F90D0AE00102192 /* DropDown */,
 			);
 			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		368094481F9639B900A1489F /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				368094491F9639ED00A1489F /* CountryCodeCell.swift */,
+			);
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 		36DBAC4C1F873B2900D7D0EA = {
@@ -246,6 +291,7 @@
 				36DBAC891F873E3200D7D0EA /* CustomFonts */,
 				361B63EC1F8F34CE0043B70D /* ThirdParty */,
 				36DBAC581F873B2900D7D0EA /* AppDelegate.swift */,
+				360C20E31F90C32500102192 /* icon.png */,
 				36DBAC621F873B2900D7D0EA /* Assets.xcassets */,
 				36DBACC61F87458F00D7D0EA /* GoogleService-Info.plist */,
 				36DBAC641F873B2900D7D0EA /* LaunchScreen.storyboard */,
@@ -286,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				36B3CE551F8B9CCD004C6CB4 /* SekenButton.swift */,
+				3680944B1F9764D000A1489F /* StringUtils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -293,6 +340,7 @@
 		36DBAC8B1F873EC200D7D0EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				360F077A1FA2019E00414EE7 /* Dashboard.storyboard */,
 				36DBACCE1F8755ED00D7D0EA /* Main.storyboard */,
 				36DBAC8C1F873EDA00D7D0EA /* CustomViews */,
 			);
@@ -318,7 +366,11 @@
 		36DBAC8E1F873F4500D7D0EA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				360C20E71F90D25200102192 /* MyCell.swift */,
+				360C20E81F90D25200102192 /* MyCell.xib */,
+				360C20E61F90D25200102192 /* NiceButton.swift */,
 				36DBACC41F87451700D7D0EA /* AppConstants.swift */,
+				368094461F96208D00A1489F /* CountryCode.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -326,6 +378,7 @@
 		36DBAC8F1F873F6400D7D0EA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				360F07771FA200E900414EE7 /* DashBoard */,
 				36DBACCB1F8753B800D7D0EA /* Signup */,
 				36DBACC91F874DC800D7D0EA /* SekenViewController.swift */,
 			);
@@ -356,6 +409,8 @@
 		36DBACB51F87412600D7D0EA /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				36108A341F9F08060000F194 /* UserManager.swift */,
+				36108A361F9F08440000F194 /* LocationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -373,6 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				36DBACBE1F87434800D7D0EA /* SekenAPI.swift */,
+				180094BB1F9A1972006A7AF3 /* UserAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -397,6 +453,7 @@
 		36DBACCB1F8753B800D7D0EA /* Signup */ = {
 			isa = PBXGroup;
 			children = (
+				368094481F9639B900A1489F /* CustomCells */,
 				36DBACCC1F8753D600D7D0EA /* StartViewController.swift */,
 				36DBAD8B1F8794CC00D7D0EA /* LoginViewController.swift */,
 				36DBAD8D1F8794E100D7D0EA /* SignupViewController.swift */,
@@ -405,6 +462,8 @@
 				36FA8C151F8CA448003EE70B /* TermsAndConditionsController.swift */,
 				36FA8C171F8CB479003EE70B /* VerifyOTPViewController.swift */,
 				36FA8C191F8CB492003EE70B /* CreatePasswordViewController.swift */,
+				36F38D851F960A8C0022505D /* ContryCodeModalVC.swift */,
+				368E16951FA4833D00FDEE30 /* SocialSignupController.swift */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -598,6 +657,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				36DBAC661F873B2900D7D0EA /* LaunchScreen.storyboard in Resources */,
+				360F077B1FA2019E00414EE7 /* Dashboard.storyboard in Resources */,
+				360C20E51F90D0AE00102192 /* DropDown in Resources */,
 				36DBACC81F87493400D7D0EA /* SanFranciscoFont-master in Resources */,
 				36DBAC631F873B2900D7D0EA /* Assets.xcassets in Resources */,
 				36DBACCF1F8755ED00D7D0EA /* Main.storyboard in Resources */,
@@ -817,11 +878,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				369F517E1F8B76CE00A0FF57 /* OTPViewController.swift in Sources */,
+				368E16961FA4833D00FDEE30 /* SocialSignupController.swift in Sources */,
 				36FA8C141F8C9CDF003EE70B /* ForgotPasswordController.swift in Sources */,
 				36DBAD8E1F8794E100D7D0EA /* SignupViewController.swift in Sources */,
+				360C20EA1F90D25200102192 /* MyCell.swift in Sources */,
 				36DBACCD1F8753D600D7D0EA /* StartViewController.swift in Sources */,
+				368094471F96208D00A1489F /* CountryCode.swift in Sources */,
+				3680944C1F9764D000A1489F /* StringUtils.swift in Sources */,
 				36FA8C1A1F8CB492003EE70B /* CreatePasswordViewController.swift in Sources */,
+				3680944A1F9639ED00A1489F /* CountryCodeCell.swift in Sources */,
 				36DBACC51F87451700D7D0EA /* AppConstants.swift in Sources */,
+				360C20E91F90D25200102192 /* NiceButton.swift in Sources */,
 				36DBAC591F873B2900D7D0EA /* AppDelegate.swift in Sources */,
 				36DBACCA1F874DC800D7D0EA /* SekenViewController.swift in Sources */,
 				36DBAD8C1F8794CC00D7D0EA /* LoginViewController.swift in Sources */,
@@ -830,6 +897,8 @@
 				36DBAC911F87401700D7D0EA /* AlertViewManager.swift in Sources */,
 				36B3CE561F8B9CCD004C6CB4 /* SekenButton.swift in Sources */,
 				36FA8C161F8CA448003EE70B /* TermsAndConditionsController.swift in Sources */,
+				360F077D1FA201D400414EE7 /* DashBoardViewController.swift in Sources */,
+				36F38D861F960A8C0022505D /* ContryCodeModalVC.swift in Sources */,
 				36FA8C181F8CB479003EE70B /* VerifyOTPViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -854,9 +923,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36108A351F9F08060000F194 /* UserManager.swift in Sources */,
 				36DBACBD1F87430400D7D0EA /* User.swift in Sources */,
 				36DBACBB1F87426900D7D0EA /* Image.swift in Sources */,
+				36108A371F9F08440000F194 /* LocationManager.swift in Sources */,
 				36DBACBF1F87434800D7D0EA /* SekenAPI.swift in Sources */,
+				180094BC1F9A1972006A7AF3 /* UserAPI.swift in Sources */,
 				36DBACC11F87440F00D7D0EA /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
