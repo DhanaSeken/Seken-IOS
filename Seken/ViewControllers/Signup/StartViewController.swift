@@ -30,7 +30,7 @@ class StartViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       //self.getToken()
+       self.getToken()
 
         // Do any additional setup after loading the view.
     }
