@@ -8,9 +8,9 @@ target 'Seken' do
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'FacebookShare'
-  pod 'MRCountryPicker', '~> 0.0.7'
   pod 'MICountryPicker', :git => 'https://github.com/mustafaibrahim989/MICountryPicker.git', :branch => 'master'
   pod 'IQKeyboardManagerSwift'
+  pod 'IHKeyboardAvoiding'
 
   # Pods for Seken
 

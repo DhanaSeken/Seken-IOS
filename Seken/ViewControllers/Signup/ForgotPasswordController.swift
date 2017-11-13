@@ -38,9 +38,14 @@ class ForgotPasswordController: SekenViewController,ContryCodeModalVCDelegate,UI
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-       
+        super.viewWillAppear(animated);
+        var dict = super.getcountryCode()
+        self.countryCode = dict["dial_code"] as! String
+        let btnImage = dict["flag"] as? UIImage
+        self.btnEmailPass.setBackgroundImage(btnImage, for: .normal)
+        
     }
+    
     
     @IBAction func otpButtonTouchupInside(_ sender: Any) {
         

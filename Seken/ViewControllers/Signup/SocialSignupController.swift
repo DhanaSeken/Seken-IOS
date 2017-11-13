@@ -51,6 +51,15 @@ class SocialSignupController: SekenViewController,ContryCodeModalVCDelegate,OTPV
          countryCode = "966"
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        var dict = super.getcountryCode()
+        self.countryCode = dict["dial_code"] as! String
+        let btnImage = dict["flag"] as? UIImage
+        self.btnCountryCode.setBackgroundImage(btnImage, for: .normal)
+        
+    }
     //MARK Private Methods
     func setupDefaultValues() {
         self.txtName.text = self.name
@@ -88,6 +97,7 @@ class SocialSignupController: SekenViewController,ContryCodeModalVCDelegate,OTPV
         otpViewController.phoneNumber = String(format: "%@%@",self.countryCode,self.txtPhoneNumber.text!)
         otpViewController.email = self.txtEmail.text!
         otpViewController.password = ""
+         otpViewController.disPlayPhoneNumber = String(format: "+%@-%@",self.countryCode,self.txtPhoneNumber.text!)
         otpViewController.socialType =  self.provider
         otpViewController.delegate = self;
         self.present(otpViewController, animated:true, completion:nil)
@@ -112,21 +122,45 @@ class SocialSignupController: SekenViewController,ContryCodeModalVCDelegate,OTPV
         }, env: .dev)
         
     }
+    
+    func isValidEmail(testStr:String) -> Bool {
+        // print("validate calendar: \(testStr)")
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
+    }
     // MARK ButtonHandler
     @IBAction func signupButtonClicked(_ sender: Any) {
         
-        if let userName = self.txtName.text, userName.characters.count > 0, let email = self.txtEmail.text, email.characters.count > 0,let phonenumber = self.txtPhoneNumber.text, phonenumber.characters.count > 0{
-            self.showActivityIndicator()
-            UserAPI.sharedAPI.performSocialSignup(phoneNumber: phonenumber, email: email, name: name, deviceType: "iOS", provider: self.provider, identifier: self.identifier, profileURL: "", gender: "", birthday: "", referalCode: self.getReferalCode(), method: "POST", successHandler: {
-                self.hideActivityIndicator()
-                self.PresentOTPModal()
-            }, failureHandler: { errorMessage in
-                 self.hideActivityIndicator()
-                  AlertViewManager.shared.ShowOkAlert(title: "Error!", message: errorMessage, handler: nil)
-            }, env: .dev)
-          }else {
-            AlertViewManager.shared.ShowOkAlert(title: "Error!", message: "username,email,phonenumber and password should not be empty", handler: nil)
-        }
+        if let userName = self.txtName.text, userName.characters.count > 0, let email = self.txtEmail.text, email.characters.count > 0,var phonenumber = self.txtPhoneNumber.text, phonenumber.characters.count > 0{
+            if (self.countryCode == "966") {
+                if phonenumber.characters.count == 10 {
+                    phonenumber =  String(phonenumber.dropFirst())
+                }
+                
+            }
+            
+            if((((self.countryCode == "966" && phonenumber.characters.count == 9) || (self.countryCode == "91" && phonenumber.characters.count == 10))) && self.isValidEmail(testStr: email)) {
+                self.showActivityIndicator()
+                UserAPI.sharedAPI.performSocialSignup(phoneNumber: String(format: "%@%@",self.countryCode,phonenumber), email: email, name: name, deviceType: "iOS", provider: self.provider, identifier: self.identifier, profileURL: "", gender: "", birthday: "", referalCode: self.getReferalCode(), method: "POST", successHandler: {
+                    self.hideActivityIndicator()
+                    self.PresentOTPModal()
+                }, failureHandler: { errorMessage in
+                    self.hideActivityIndicator()
+                    AlertViewManager.shared.ShowOkAlert(title: "Error!", message: errorMessage, handler: nil)
+                }, env: .dev)
+            }else {
+                AlertViewManager.shared.ShowOkAlert(title: "Error!", message: "username,email,phonenumber and password should not be empty", handler: nil)
+            }
+            }else{
+            if !self.isValidEmail(testStr: email){
+                AlertViewManager.shared.ShowOkAlert(title: "Error!", message: "Please enter valid email id", handler: nil)
+            }else{
+                AlertViewManager.shared.ShowOkAlert(title: "Error!", message: "Please enter valid phone number", handler: nil)
+            }
+            }
+                
+           
         
     }
    

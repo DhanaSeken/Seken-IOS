@@ -14,17 +14,14 @@ import SekenSDK
 class SignupViewController: SekenViewController,ContryCodeModalVCDelegate,OTPViewControllerCDelegate {
     
    func sendCountryImag(img:UIImage,countryCode:String) {
-        self.countryCode.setImage(img, for: .normal)
+        self.countryCode.setBackgroundImage(img, for: .normal)
         self.countryCodeStr = countryCode
     }
     
     func pushDashboardVC()  {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.showDashBoard()
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Dashboard", bundle:nil)
-//        let dashboardVC = storyBoard.instantiateViewController(withIdentifier: "DashBoardViewController") as! DashBoardViewController
-//        self.navigationController?.pushViewController(dashboardVC, animated: true)
-       // self.navigationController?.setNavigationBarHidden(true, animated: true)
+
     }
     
     
@@ -52,8 +49,19 @@ class SignupViewController: SekenViewController,ContryCodeModalVCDelegate,OTPVie
         // Do any additional setup after loading the view.
          self.title = "Signup"
          self.setBackBarButtonCustom()
-         txtPassword.isSecureTextEntry = true;
+         txtPassword.isSecureTextEntry = true
         self.countryCodeStr = "966"
+        self.txtPhoneNumber.textAlignment = .left
+       
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        var dict = super.getcountryCode()
+        self.countryCodeStr = dict["dial_code"] as! String
+        let btnImage = dict["flag"] as? UIImage
+        self.countryCode.setBackgroundImage(btnImage, for: .normal)
+        
     }
 
     
@@ -71,27 +79,43 @@ class SignupViewController: SekenViewController,ContryCodeModalVCDelegate,OTPVie
     
     @IBAction func signupButtonCliked(_ sender: Any) {
         
-          if let userName = self.txtFullName.text, userName.characters.count > 0, let email = self.txtEmail.text, email.characters.count > 0,let phonenumber = self.txtPhoneNumber.text, phonenumber.characters.count > 0,let password = self.txtPassword.text, password.characters.count > 0 {
-            if (phonenumber.characters.count == 10 && self.isPasswordValid(password) && self.isValidEmail(testStr: email) ) {
-                self.showActivityIndicator()
-                UserAPI.sharedAPI.performSignup(mail: email, password: password, fieldPhoneNumber: String(format: "%@%@",self.countryCodeStr,phonenumber), fieldFullName: userName, referalCode: self.getReferalCode(), fieldDeviceType: "ios", method: "POST", successHandler: {
-                    self.hideActivityIndicator()
-                    self.PresentOTPModal()
+          if let userName = self.txtFullName.text, userName.characters.count > 0, let email = self.txtEmail.text, email.characters.count > 0,var phonenumber = self.txtPhoneNumber.text, phonenumber.characters.count > 0,let password = self.txtPassword.text, password.characters.count > 0 {
+            
+                if (self.countryCodeStr == "966") {
+                    if phonenumber.characters.count == 10 {
+                         phonenumber =  String(phonenumber.dropFirst())
+                    }
+                   
+                }
+                
+                if((((self.countryCodeStr == "966" && phonenumber.characters.count == 9) || (self.countryCodeStr == "91" && phonenumber.characters.count == 10))) && self.isValidEmail(testStr: email)) {
+                    self.showActivityIndicator()
+                    UserAPI.sharedAPI.performSignup(mail: email, password: password, fieldPhoneNumber: String(format: "%@%@",self.countryCodeStr,phonenumber), fieldFullName: userName, referalCode: self.getReferalCode(), fieldDeviceType: "ios", method: "POST", successHandler: {
+                        self.hideActivityIndicator()
+                        self.PresentOTPModal()
+                        
+                    }, failureHandler: { errorDescrpition in
+                        self.hideActivityIndicator()
+                        AlertViewManager.shared.ShowOkAlert(title: "Error!", message: errorDescrpition, handler: nil)
+                    }, env: .dev)
+                }else{
+                    if !self.isValidEmail(testStr: email){
+                         AlertViewManager.shared.ShowOkAlert(title: "Error!", message: "Please enter valid email id", handler: nil)
+                    }else{
+                          AlertViewManager.shared.ShowOkAlert(title: "Error!", message: "Please enter valid phone number", handler: nil)
+                    }
+                        
                     
-                }, failureHandler: { errorDescrpition in
-                    self.hideActivityIndicator()
-                    AlertViewManager.shared.ShowOkAlert(title: "Error!", message: errorDescrpition, handler: nil)
-                }, env: .dev)
+                }
+                
+             
             }else {
                  AlertViewManager.shared.ShowOkAlert(title: "Error!", message: "phone number should be 10 numbers", handler: nil)
             }
            
             
             
-             }else {
-             AlertViewManager.shared.ShowOkAlert(title: "Error!", message: "username,email,phonenumber and password should not be empty", handler: nil)
-            
-            }
+        
         
     }
     
@@ -102,6 +126,7 @@ class SignupViewController: SekenViewController,ContryCodeModalVCDelegate,OTPVie
         otpViewController.phoneNumber = String(format: "%@%@",self.countryCodeStr,self.txtPhoneNumber.text!)
         otpViewController.email = self.txtEmail.text!
         otpViewController.password = self.txtPassword.text!
+        otpViewController.disPlayPhoneNumber = String(format: "+%@-%@",self.countryCodeStr,self.txtPhoneNumber.text!)
         otpViewController.delegate = self;
         self.present(otpViewController, animated:true, completion:nil)
         

@@ -50,12 +50,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "StartViewController") as UIViewController
         let navVc = UINavigationController.init(rootViewController: vc)
+        navVc.isNavigationBarHidden = true;
         self.window?.rootViewController = navVc
     }
     func showDashBoard()  {
         let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DashBoardViewController") as UIViewController
          let navVc = UINavigationController.init(rootViewController: vc)
+         //navVc.isNavigationBarHidden = true;
           self.window?.rootViewController = navVc
     }
     

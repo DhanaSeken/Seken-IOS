@@ -17,7 +17,7 @@ class TermsAndConditionsController: SekenViewController,UIWebViewDelegate {
         self.title = "Terms and Conditions"
         self.setBackBarButtonCustom()
         
-        let myWebView:UIWebView = UIWebView(frame: CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height:UIScreen.main.bounds.height))
+        let myWebView:UIWebView = UIWebView(frame: CGRect(x:0, y:50, width: UIScreen.main.bounds.width, height:UIScreen.main.bounds.height-50))
         myWebView.delegate = self as UIWebViewDelegate
         self.view.addSubview(myWebView)
         

@@ -44,11 +44,12 @@ class OTPViewController: SekenViewController {
         txtOTP3.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         txtOTP4.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         self.generateOTP()
+         self.lblPhoneNumber.text = self.disPlayPhoneNumber
         
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.lblPhoneNumber.text = self.disPlayPhoneNumber
+       
     }
     
     @IBAction func cancelButtonCliked(_ sender: Any) {

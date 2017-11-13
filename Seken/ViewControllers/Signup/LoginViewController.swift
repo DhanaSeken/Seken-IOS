@@ -55,6 +55,12 @@ class LoginViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+       
+        
+    }
+    
     
     
     //Button Handler
@@ -254,7 +260,9 @@ class LoginViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
         if newString.characters.count>0 {
             
             if (newString.isStringAnInt()) {
-                let btnImage = UIImage(named: "soudi")
+                var dict = super.getcountryCode()
+                countryCode = dict["dial_code"] as! String
+                let btnImage = dict["flag"] as? UIImage
                 self.btnEmailPass.isUserInteractionEnabled = true
                 self.btnEmailPass.setBackgroundImage(btnImage, for: .normal)
                

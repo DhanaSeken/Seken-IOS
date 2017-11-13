@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MICountryPicker
 
 enum UIUserInterfaceIdiom : Int
 {
@@ -87,8 +88,53 @@ class SekenViewController: UIViewController {
     {
         _ = self.navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func backbuttonClicked(_ sender: AnyObject) {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    func getcountryCode() -> Dictionary<String, Any> {
+        
+        var image = UIImage(named: "saudi")
+        var countryCodeStr:String = "966"
+        var dict:[String:Any] = [:]
+        if let countryCode = (Locale.current as NSLocale).object(forKey: .countryCode) as? String {
+            let resourceBundle1 = Bundle(for: MICountryPicker.classForCoder())
+            guard let path1 = resourceBundle1.path(forResource: "TopCallingCodes", ofType: "plist") else {
+                dict["flag"] = image
+                dict["dial_code"] = countryCodeStr
+                return dict
+            }
+            
+            
+            if let array1 = NSArray(contentsOfFile: path1) as? [[String: String]] {
+                
+                for var tempDict:[String:String] in array1 {
+                    if(tempDict["code"] == countryCode){
+                        let bundle = "assets.bundle/"
+                        image = UIImage(named: bundle + (tempDict["code"]?.lowercased())! + ".png", in: Bundle(for: MICountryPicker.self), compatibleWith: nil)!
+                        countryCodeStr = tempDict["dial_code"]!
+                    }
+                    
+                }
+            }
+            
+        }
+        dict["flag"] = image
+        dict["dial_code"] = countryCodeStr
+        return dict;
+    }
 
 }
+
+
+
+
+
 
 @IBDesignable extension UINavigationController {
     @IBInspectable var barTintColor: UIColor? {
