@@ -41,6 +41,9 @@ class SocialSignupController: SekenViewController,ContryCodeModalVCDelegate,OTPV
     @IBOutlet weak var lblTerms: UILabel!
     @IBOutlet weak var lblSignUp: UILabel!
     
+    var isrequireViewmove:Bool = false
+    var movedValue:NSInteger = 0;
+    
     
     // MARK:Lifecycle Methods
     override func viewDidLoad() {
@@ -50,6 +53,73 @@ class SocialSignupController: SekenViewController,ContryCodeModalVCDelegate,OTPV
         self.setupDefaultValues()
          countryCode = "966"
         // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.up
+        self.view.addGestureRecognizer(swipeRight)
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeDown.direction = UISwipeGestureRecognizerDirection.down
+        self.view.addGestureRecognizer(swipeDown)
+    }
+    
+    
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        
+        isrequireViewmove = true;
+        
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        isrequireViewmove = false;
+        UIView.animate(withDuration: 1, animations: {
+            self.view.frame.origin.y = 0
+        }, completion: nil)
+        self.movedValue = 0;
+    }
+    @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        
+        if (isrequireViewmove && self.movedValue<=160){
+            if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+                switch swipeGesture.direction {
+                case UISwipeGestureRecognizerDirection.right:
+                    print("Swiped right")
+                    break
+                case UISwipeGestureRecognizerDirection.down:do {
+                    if(self.movedValue >= 40) {
+                        UIView.animate(withDuration: 1, animations: {
+                            self.view.frame.origin.y += 40
+                            self.movedValue = self.movedValue-40
+                        }, completion: nil)
+                    }
+                    
+                    print("Swiped down")
+                }
+                    break
+                case UISwipeGestureRecognizerDirection.left:
+                    print("Swiped left")
+                    break
+                case UISwipeGestureRecognizerDirection.up:do {
+                    
+                    UIView.animate(withDuration: 1, animations: {
+                        self.view.frame.origin.y -= 40
+                        self.movedValue = self.movedValue+40
+                    }, completion: nil)
+                    print("Swiped down")
+                    
+                    
+                }
+                    break
+                default:
+                    break
+                }
+            }
+        }
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -115,12 +185,21 @@ class SocialSignupController: SekenViewController,ContryCodeModalVCDelegate,OTPV
         self.showActivityIndicator()
         UserAPI.sharedAPI.performSocialLogin(provider: self.provider, identifier: self.identifier, method: "POST", successHandler: {
              self.hideActivityIndicator()
-            self.showDashBoard()
+            self.navigateNextScreen()
         }, failureHandler: { errorMessage in
             self.hideActivityIndicator()
             AlertViewManager.shared.ShowOkAlert(title: "Error", message: errorMessage, handler: nil)
         }, env: .dev)
         
+    }
+    
+    func navigateNextScreen ()  {
+        
+        if UserManager.shared.currentUser?.otpValidated == "yes" {
+            self.showDashBoard()
+        }else{
+            self.PresentOTPModal()
+        }
     }
     
     func isValidEmail(testStr:String) -> Bool {

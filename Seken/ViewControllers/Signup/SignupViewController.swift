@@ -41,6 +41,8 @@ class SignupViewController: SekenViewController,ContryCodeModalVCDelegate,OTPVie
     @IBOutlet weak var countryCode: NiceButton!
     var countryCodeStr:String = ""
     
+    var isrequireViewmove:Bool = false
+    var movedValue:NSInteger = 0;
     
     
     override func viewDidLoad() {
@@ -52,7 +54,72 @@ class SignupViewController: SekenViewController,ContryCodeModalVCDelegate,OTPVie
          txtPassword.isSecureTextEntry = true
         self.countryCodeStr = "966"
         self.txtPhoneNumber.textAlignment = .left
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.up
+        self.view.addGestureRecognizer(swipeRight)
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeDown.direction = UISwipeGestureRecognizerDirection.down
+        self.view.addGestureRecognizer(swipeDown)
+       
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        
+        isrequireViewmove = true;
+        
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+         isrequireViewmove = false;
+        UIView.animate(withDuration: 1, animations: {
+            self.view.frame.origin.y = 0
+        }, completion: nil)
+        self.movedValue = 0;
+    }
+ @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+    
+        if (isrequireViewmove && self.movedValue<=160){
+            if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+                switch swipeGesture.direction {
+                case UISwipeGestureRecognizerDirection.right:
+                    print("Swiped right")
+                    break
+                case UISwipeGestureRecognizerDirection.down:do {
+                    if(self.movedValue >= 40) {
+                        UIView.animate(withDuration: 1, animations: {
+                            self.view.frame.origin.y += 40
+                            self.movedValue = self.movedValue-40
+                        }, completion: nil)
+                    }
+                   
+                    print("Swiped down")
+                }
+                    break
+                case UISwipeGestureRecognizerDirection.left:
+                    print("Swiped left")
+                    break
+                case UISwipeGestureRecognizerDirection.up:do {
+                    
+                        UIView.animate(withDuration: 1, animations: {
+                            self.view.frame.origin.y -= 40
+                            self.movedValue = self.movedValue+40
+                        }, completion: nil)
+                        print("Swiped down")
+                   
+                   
+                }
+                    break
+                default:
+                    break
+                }
+            }
+        }
+ 
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,6 +128,7 @@ class SignupViewController: SekenViewController,ContryCodeModalVCDelegate,OTPVie
         self.countryCodeStr = dict["dial_code"] as! String
         let btnImage = dict["flag"] as? UIImage
         self.countryCode.setBackgroundImage(btnImage, for: .normal)
+        
         
     }
 

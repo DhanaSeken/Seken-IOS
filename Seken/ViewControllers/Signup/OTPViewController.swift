@@ -9,6 +9,10 @@
 import UIKit
 import SekenSDK
 
+let kMaxRadius: CGFloat = 200
+let kMaxDuration: TimeInterval = 10
+
+
 protocol OTPViewControllerCDelegate: class{
     func pushDashboardVC()
 }
@@ -20,6 +24,10 @@ class OTPViewController: SekenViewController {
     @IBOutlet weak var txtOTP2: UITextField!
     @IBOutlet weak var txtOTP3: UITextField!
     @IBOutlet weak var txtOTP4: UITextField!
+    @IBOutlet weak var sourceView: UIImageView!
+    @IBOutlet weak var btnSubmit: SekenButton!
+    @IBOutlet weak var btnResend: UIButton!
+    
     var phoneNumber:String = ""
     var email:String = ""
     var otpStr:String = ""
@@ -27,13 +35,16 @@ class OTPViewController: SekenViewController {
     var disPlayPhoneNumber:String = ""
     var socialType:String = ""
     weak var delegate: OTPViewControllerCDelegate?
+    var pulsulator: Pulsator!
+    var timer : Timer!
+    var second = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.title = "Verify OTP"
-         self.generateOTP()
         self.setBackBarButtonCustom()
         txtOTP1.delegate = self as? UITextFieldDelegate
         txtOTP2.delegate = self as? UITextFieldDelegate
@@ -43,10 +54,20 @@ class OTPViewController: SekenViewController {
         txtOTP2.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         txtOTP3.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         txtOTP4.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
+        self.initPulseView()
         self.generateOTP()
          self.lblPhoneNumber.text = self.disPlayPhoneNumber
+       
+        
         
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        view.layer.layoutIfNeeded()
+        self.pulsulator.position = sourceView.layer.position
+    }
+  
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
        
@@ -115,6 +136,39 @@ class OTPViewController: SekenViewController {
         }
 }
     
+    func initPulseView(){
+         self.pulsulator = Pulsator()
+        sourceView.layer.superlayer?.insertSublayer(self.pulsulator, below: sourceView.layer)
+        self.strt()
+      
+        
+    }
+    
+    func strt()  {
+        self.btnSubmit.isUserInteractionEnabled = false
+         self.btnResend.isUserInteractionEnabled = false
+        self.pulsulator.start()
+        self.pulsulator.radius = 0.7 * kMaxRadius
+        self.pulsulator.numPulse = 3
+        self.pulsulator.radius = 150
+         self.pulsulator.backgroundColor = UIColor(red: 0/255, green: 155/255, blue: 203/255, alpha: 1).cgColor
+       
+        timer = Timer();
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.calculateSeconds), userInfo: nil, repeats: true)
+    }
+    @objc func calculateSeconds() {
+        
+        if second<=30 {
+        second += 1
+        }else{
+            second = 0
+            timer.invalidate()
+            self.pulsulator.stop()
+        }
+        
+    }
+   
+    
     func calSigninCal()  {
         self.showActivityIndicator()
         UserAPI.sharedAPI.performLogin(userName: self.email, password: password, method: "POST", successHandler: {
@@ -140,14 +194,25 @@ class OTPViewController: SekenViewController {
     }
     
     func generateOTP() {
-        
         self.showActivityIndicator()
+         self.strt()
         UserAPI.sharedAPI.performGenerateOTP(phoneNumber: self.phoneNumber, email: self.email, method: "POST", successHandler: { otp in
              self.hideActivityIndicator()
             self.otpStr = otp
+            self.second = 0
+            self.timer.invalidate()
+            self.pulsulator.stop()
+            self.btnSubmit.isUserInteractionEnabled = true
+            self.btnResend.isUserInteractionEnabled = true
+            
             
         }, failureHandler: { errorDescrpition in
              self.hideActivityIndicator()
+            self.second = 0
+            self.timer.invalidate()
+            self.pulsulator.stop()
+            self.btnSubmit.isUserInteractionEnabled = true
+            self.btnResend.isUserInteractionEnabled = true
             AlertViewManager.shared.ShowOkAlert(title: "Error!", message: errorDescrpition, handler: nil)
         }, env: .dev)
         

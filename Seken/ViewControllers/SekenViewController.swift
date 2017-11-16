@@ -98,8 +98,8 @@ class SekenViewController: UIViewController {
     }
     
     func getcountryCode() -> Dictionary<String, Any> {
-        
-        var image = UIImage(named: "saudi")
+        let imageName = "soudi.png"
+        var image = UIImage(named: imageName)
         var countryCodeStr:String = "966"
         var dict:[String:Any] = [:]
         if let countryCode = (Locale.current as NSLocale).object(forKey: .countryCode) as? String {

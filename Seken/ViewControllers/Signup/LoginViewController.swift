@@ -80,6 +80,7 @@ class LoginViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
                  self.showActivityIndicator()
                 UserAPI.sharedAPI.performLogin(userName: String(format: "%@%@",self.countryCode,userName), password: password, method: "POST", successHandler: {
                     self.hideActivityIndicator()
+                    self.navigateNextScreen()
                 }, failureHandler: {  errorDescrpition in
                     self.hideActivityIndicator()
                     AlertViewManager.shared.ShowOkAlert(title: "Failure", message: errorDescrpition, handler: nil)
@@ -94,7 +95,7 @@ class LoginViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
     
     func navigateNextScreen ()  {
         
-        if UserManager.shared.currentUser?.otpValidated == "YES" {
+        if UserManager.shared.currentUser?.otpValidated == "yes" {
              self.pushDashboardVC()
         }else{
            self.PresentOTPModal()

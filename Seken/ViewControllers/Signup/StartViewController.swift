@@ -99,8 +99,8 @@ class StartViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
                 print (accessToken)
                 // self.calFaceBookLoginService(faceBookId: accessToken.appId, accessToken: accessToken.authenticationToken)
                 self.socialSignupType = "FaceBook"
-                self.identifier = accessToken.appId
-                self.calSocialSingin(type: "FaceBook", identifier: accessToken.appId)
+                self.identifier = accessToken.userId!
+                self.calSocialSingin(type: "FaceBook", identifier: accessToken.userId!)
                 
             }
         }
@@ -190,7 +190,7 @@ class StartViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
             let email = user.profile.email
             print("Welcome: ,\(String(describing: userId)), \(String(describing: idToken)), \(String(describing: fullName)), \(String(describing: givenName)), \(String(describing: familyName)), \(String(describing: email))")
             self.socialSignupType = "Google"
-            self.identifier = user.authentication.idToken
+            self.identifier = user.userID
             self.name = user.profile.name
             self.email = user.profile.email
             self.googleUser = user

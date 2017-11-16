@@ -16,12 +16,20 @@
 		360F077D1FA201D400414EE7 /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360F077C1FA201D400414EE7 /* DashBoardViewController.swift */; };
 		36108A351F9F08060000F194 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36108A341F9F08060000F194 /* UserManager.swift */; };
 		36108A371F9F08440000F194 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36108A361F9F08440000F194 /* LocationManager.swift */; };
+		365784891FBB05500016A010 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365784881FBB05500016A010 /* LocationViewController.swift */; };
+		3657848B1FBC20530016A010 /* SearchLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3657848A1FBC20530016A010 /* SearchLocationViewController.swift */; };
+		3657848D1FBC21CE0016A010 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3657848C1FBC21CE0016A010 /* PlacesViewController.swift */; };
 		368094471F96208D00A1489F /* CountryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368094461F96208D00A1489F /* CountryCode.swift */; };
 		3680944A1F9639ED00A1489F /* CountryCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368094491F9639ED00A1489F /* CountryCodeCell.swift */; };
 		3680944C1F9764D000A1489F /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3680944B1F9764D000A1489F /* StringUtils.swift */; };
 		368E16961FA4833D00FDEE30 /* SocialSignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368E16951FA4833D00FDEE30 /* SocialSignupController.swift */; };
 		369F517E1F8B76CE00A0FF57 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369F517D1F8B76CE00A0FF57 /* OTPViewController.swift */; };
 		36B3CE561F8B9CCD004C6CB4 /* SekenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B3CE551F8B9CCD004C6CB4 /* SekenButton.swift */; };
+		36B535DA1FBC7313005E2B37 /* Pulsator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B535D91FBC7313005E2B37 /* Pulsator.swift */; };
+		36B535DD1FBD0C60005E2B37 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B535DC1FBD0C60005E2B37 /* PlaceCell.swift */; };
+		36B535DF1FBD165E005E2B37 /* TopRatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B535DE1FBD165E005E2B37 /* TopRatedViewController.swift */; };
+		36B535E11FBD16A0005E2B37 /* BudgetRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B535E01FBD16A0005E2B37 /* BudgetRoomController.swift */; };
+		36B535E31FBD1C55005E2B37 /* TopRatedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B535E21FBD1C55005E2B37 /* TopRatedCell.swift */; };
 		36DBAC591F873B2900D7D0EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBAC581F873B2900D7D0EA /* AppDelegate.swift */; };
 		36DBAC611F873B2900D7D0EA /* Seken.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36DBAC5F1F873B2900D7D0EA /* Seken.xcdatamodeld */; };
 		36DBAC631F873B2900D7D0EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36DBAC621F873B2900D7D0EA /* Assets.xcassets */; };
@@ -121,12 +129,20 @@
 		36108A341F9F08060000F194 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		36108A361F9F08440000F194 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		361B63E91F8E52A20043B70D /* countryCodes.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = countryCodes.plist; sourceTree = "<group>"; };
+		365784881FBB05500016A010 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		3657848A1FBC20530016A010 /* SearchLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationViewController.swift; sourceTree = "<group>"; };
+		3657848C1FBC21CE0016A010 /* PlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		368094461F96208D00A1489F /* CountryCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCode.swift; sourceTree = "<group>"; };
 		368094491F9639ED00A1489F /* CountryCodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodeCell.swift; sourceTree = "<group>"; };
 		3680944B1F9764D000A1489F /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		368E16951FA4833D00FDEE30 /* SocialSignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignupController.swift; sourceTree = "<group>"; };
 		369F517D1F8B76CE00A0FF57 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		36B3CE551F8B9CCD004C6CB4 /* SekenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SekenButton.swift; sourceTree = "<group>"; };
+		36B535D91FBC7313005E2B37 /* Pulsator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pulsator.swift; sourceTree = "<group>"; };
+		36B535DC1FBD0C60005E2B37 /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
+		36B535DE1FBD165E005E2B37 /* TopRatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedViewController.swift; sourceTree = "<group>"; };
+		36B535E01FBD16A0005E2B37 /* BudgetRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetRoomController.swift; sourceTree = "<group>"; };
+		36B535E21FBD1C55005E2B37 /* TopRatedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedCell.swift; sourceTree = "<group>"; };
 		36DBAC551F873B2900D7D0EA /* Seken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Seken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36DBAC581F873B2900D7D0EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36DBAC601F873B2900D7D0EA /* Seken.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Seken.xcdatamodel; sourceTree = "<group>"; };
@@ -233,7 +249,13 @@
 		360F07771FA200E900414EE7 /* DashBoard */ = {
 			isa = PBXGroup;
 			children = (
+				36B535DB1FBD0C21005E2B37 /* CustomCollectionviewCells */,
 				360F077C1FA201D400414EE7 /* DashBoardViewController.swift */,
+				365784881FBB05500016A010 /* LocationViewController.swift */,
+				3657848A1FBC20530016A010 /* SearchLocationViewController.swift */,
+				3657848C1FBC21CE0016A010 /* PlacesViewController.swift */,
+				36B535DE1FBD165E005E2B37 /* TopRatedViewController.swift */,
+				36B535E01FBD16A0005E2B37 /* BudgetRoomController.swift */,
 			);
 			path = DashBoard;
 			sourceTree = "<group>";
@@ -241,6 +263,7 @@
 		361B63EC1F8F34CE0043B70D /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				36B535D91FBC7313005E2B37 /* Pulsator.swift */,
 				360C20E41F90D0AE00102192 /* DropDown */,
 			);
 			path = ThirdParty;
@@ -252,6 +275,15 @@
 				368094491F9639ED00A1489F /* CountryCodeCell.swift */,
 			);
 			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		36B535DB1FBD0C21005E2B37 /* CustomCollectionviewCells */ = {
+			isa = PBXGroup;
+			children = (
+				36B535DC1FBD0C60005E2B37 /* PlaceCell.swift */,
+				36B535E21FBD1C55005E2B37 /* TopRatedCell.swift */,
+			);
+			path = CustomCollectionviewCells;
 			sourceTree = "<group>";
 		};
 		36DBAC4C1F873B2900D7D0EA = {
@@ -889,17 +921,25 @@
 				3680944A1F9639ED00A1489F /* CountryCodeCell.swift in Sources */,
 				36DBACC51F87451700D7D0EA /* AppConstants.swift in Sources */,
 				360C20E91F90D25200102192 /* NiceButton.swift in Sources */,
+				3657848B1FBC20530016A010 /* SearchLocationViewController.swift in Sources */,
 				36DBAC591F873B2900D7D0EA /* AppDelegate.swift in Sources */,
+				36B535DF1FBD165E005E2B37 /* TopRatedViewController.swift in Sources */,
+				36B535E31FBD1C55005E2B37 /* TopRatedCell.swift in Sources */,
 				36DBACCA1F874DC800D7D0EA /* SekenViewController.swift in Sources */,
 				36DBAD8C1F8794CC00D7D0EA /* LoginViewController.swift in Sources */,
+				365784891FBB05500016A010 /* LocationViewController.swift in Sources */,
 				36DBACC31F87445500D7D0EA /* EnvironmentManager.swift in Sources */,
 				36DBAC611F873B2900D7D0EA /* Seken.xcdatamodeld in Sources */,
 				36DBAC911F87401700D7D0EA /* AlertViewManager.swift in Sources */,
+				3657848D1FBC21CE0016A010 /* PlacesViewController.swift in Sources */,
 				36B3CE561F8B9CCD004C6CB4 /* SekenButton.swift in Sources */,
 				36FA8C161F8CA448003EE70B /* TermsAndConditionsController.swift in Sources */,
+				36B535DD1FBD0C60005E2B37 /* PlaceCell.swift in Sources */,
 				360F077D1FA201D400414EE7 /* DashBoardViewController.swift in Sources */,
+				36B535DA1FBC7313005E2B37 /* Pulsator.swift in Sources */,
 				36F38D861F960A8C0022505D /* ContryCodeModalVC.swift in Sources */,
 				36FA8C181F8CB479003EE70B /* VerifyOTPViewController.swift in Sources */,
+				36B535E11FBD16A0005E2B37 /* BudgetRoomController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

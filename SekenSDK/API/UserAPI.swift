@@ -60,11 +60,11 @@ public class UserAPI {
             
             switch statusCode {
             case 200 :
-//                if let userDetails = response as? Dictionary<String, Any> {
-//                    let currentUser = User.init(userDetails: userDetails, environment: env)
-//                    UserManager.shared.save(user: currentUser)
-//                    UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
-//                }
+                if let userDetails = response as? Dictionary<String, Any> {
+                    let currentUser = User.init(userDetails: userDetails, environment: env)
+                    UserManager.shared.save(user: currentUser)
+                    UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+                }
                 successHandler?()
                 break
                 
@@ -306,6 +306,7 @@ public class UserAPI {
             "provider":provider,
             "identifier":identifier
         ]
+        
         SekenAPI.sharedAPI.performRequest(method: "hybridauth/login", type: .post, queryParams: nil, customHeaders: nil, content: details, completionHandler: {
             statusCode, response, data, error in
             
