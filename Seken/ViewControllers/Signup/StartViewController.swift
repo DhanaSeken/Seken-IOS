@@ -13,7 +13,7 @@ import GoogleSignIn
 import FBSDKShareKit
 import SekenSDK
 
-class StartViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDelegate {
+class StartViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDelegate,OTPViewControllerCDelegate {
     @IBOutlet weak var imgHeaderView: UIImageView!
     @IBOutlet weak var lblHeader: UILabel!
     @IBOutlet weak var lblsubHeader: UILabel!
@@ -26,6 +26,10 @@ class StartViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
     var email:String = ""
     var name:String = ""
     var googleUser: GIDGoogleUser!
+    
+    func pushDashboardVC() {
+         self.calSocialSingin(type: self.socialSignupType, identifier: self.identifier)
+    }
     
     
     override func viewDidLoad() {
@@ -84,6 +88,7 @@ class StartViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
         
         self.showActivityIndicator()
         let loginManager = LoginManager()
+       loginManager.loginBehavior = .native
         loginManager.logIn([ .publicProfile,.email,.userFriends ], viewController: self) { loginResult in
             self.hideActivityIndicator()
             switch loginResult {
@@ -117,7 +122,7 @@ class StartViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
     func calSocialSingin(type:String,identifier:String) {
         self.showActivityIndicator()
         UserAPI.sharedAPI.performSocialLogin(provider:type, identifier:identifier, method: "POST", successHandler: {
-            self.pushDashboardVC()
+            self.navigateNextScreen()
              self.hideActivityIndicator()
         }, failureHandler: { errorMessage in
             self.hideActivityIndicator()
@@ -135,6 +140,31 @@ class StartViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
         
     }
     
+    func navigateNextScreen ()  {
+        
+        if UserManager.shared.currentUser?.otpValidated == "yes" {
+            self.showDashboard()
+        }else{
+            self.PresentOTPModal()
+        }
+    }
+    
+    
+    func PresentOTPModal() {
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let otpViewController = storyBoard.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
+        otpViewController.phoneNumber = (UserManager.shared.currentUser?.phone)!
+        otpViewController.disPlayPhoneNumber = (UserManager.shared.currentUser?.phone)!
+        otpViewController.email = (UserManager.shared.currentUser?.email)!
+        otpViewController.password = ""
+        otpViewController.message = "Please verify your mobilenumber to continue"
+        otpViewController.socialType = self.socialSignupType
+         otpViewController.delegate = self;
+        self.present(otpViewController, animated:true, completion:nil)
+        
+        
+    }
     func calSocialSignup(provider:String,identifier:String,name:String,phoneNumber:String,email:String,device:String,referalCode:String,profilePic:String,gender:String,dob:String) {
         
         
@@ -151,13 +181,9 @@ class StartViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
         self.navigationController?.pushViewController(socialSignUpVC, animated: true)
     }
     
-    func pushDashboardVC()  {
+    func showDashboard()  {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.showDashBoard()
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Dashboard", bundle:nil)
-//        let dashboardVC = storyBoard.instantiateViewController(withIdentifier: "DashBoardViewController") as! DashBoardViewController
-//        self.navigationController?.pushViewController(dashboardVC, animated: true)
-        // self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     

@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
         GIDSignIn.sharedInstance().clientID = Constants.GoogleSignupKeys.ClientID
         GIDSignIn.sharedInstance().delegate = self as GIDSignInDelegate
         IQKeyboardManager.sharedManager().enable = true
+       
         return true
     }
     

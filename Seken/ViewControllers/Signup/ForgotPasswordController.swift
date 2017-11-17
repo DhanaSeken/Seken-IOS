@@ -20,8 +20,8 @@ class ForgotPasswordController: SekenViewController,ContryCodeModalVCDelegate,UI
     @IBOutlet weak var lblDescption: UILabel!
     @IBOutlet weak var lblHeader: UILabel!
     @IBOutlet weak var btnOTP: SekenButton!
+    @IBOutlet weak var emailPhoneWidthConstarins: NSLayoutConstraint!
     var emailLogin = false
-    
     var countryCode:String = ""
     var email:String = ""
     var phoneNumber:String = ""
@@ -39,11 +39,6 @@ class ForgotPasswordController: SekenViewController,ContryCodeModalVCDelegate,UI
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
-        var dict = super.getcountryCode()
-        self.countryCode = dict["dial_code"] as! String
-        let btnImage = dict["flag"] as? UIImage
-        self.btnEmailPass.setBackgroundImage(btnImage, for: .normal)
-        
     }
     
     
@@ -77,6 +72,7 @@ class ForgotPasswordController: SekenViewController,ContryCodeModalVCDelegate,UI
         
         UserAPI.sharedAPI.performForgotGenerateOTP(phoneNumber: phoneNumber, email: email, method: "POST", successHandler: { otpString in
             if(self.emailLogin) {
+                
                 let okay = UIAlertAction.init(title: "OK", style: .default, handler: {
                     action in
                     self.navigateVerifyOTP()
@@ -93,6 +89,11 @@ class ForgotPasswordController: SekenViewController,ContryCodeModalVCDelegate,UI
              AlertViewManager.shared.ShowOkAlert(title: "Error!", message: errorMessage, handler: nil)
         }, env: .dev)
         
+    }
+    
+    @IBAction func resendButtonTouchUpinside(_ sender: Any) {
+        
+        self.forgotOTPCal()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -112,19 +113,27 @@ class ForgotPasswordController: SekenViewController,ContryCodeModalVCDelegate,UI
             if newString.characters.count>0 {
                 
                 if (newString.isStringAnInt()) {
-                    let btnImage = UIImage(named: "soudi")
+                    var dict = super.getcountryCode()
+                    countryCode = dict["dial_code"] as! String
+                    let btnImage = dict["flag"] as? UIImage
                     self.btnEmailPass.isUserInteractionEnabled = true
                     self.btnEmailPass.setBackgroundImage(btnImage, for: .normal)
+                    self.emailPhoneWidthConstarins.constant = 45
+                    self.view.layoutIfNeeded()
                     
                 }else {
                     let btnImage = UIImage(named: "Mail_Icon")
                     self.btnEmailPass.isUserInteractionEnabled = false
                     self.btnEmailPass.setBackgroundImage(btnImage, for: .normal)
+                    self.emailPhoneWidthConstarins.constant = 30
+                    self.view.layoutIfNeeded()
                 }
             }else{
                 let btnImage = UIImage(named: "Emailorphonenumber")
                 self.btnEmailPass.setBackgroundImage(btnImage, for: .normal)
                 self.btnEmailPass.isUserInteractionEnabled = false
+                self.emailPhoneWidthConstarins.constant = 30
+                self.view.layoutIfNeeded()
                 
             }
             

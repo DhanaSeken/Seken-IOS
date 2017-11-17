@@ -75,7 +75,7 @@ class VerifyOTPViewController: SekenViewController {
         if let otp1 = self.txtOTP1.text, otp1.characters.count > 0, let otp2 = self.txtOTP2.text, otp2.characters.count > 0, let otp3 = self.txtOTP3.text, otp3.characters.count > 0, let otp4 = self.txtOTP4.text, otp4.characters.count > 0 {
             let OTPStr = String(format: "%@%@%@%@",otp1,otp2,otp3,otp4)
             print(OTPStr)
-            if self.otpStr == OTPStr {
+           // if self.otpStr == OTPStr {
                  self.showActivityIndicator()
                 UserAPI.sharedAPI.performForgotValidateOTP(phoneNumber: self.phoneNumber, email: self.email, OTP: OTPStr, method: "POST", successHandler: {
                     self.hideActivityIndicator()
@@ -86,13 +86,14 @@ class VerifyOTPViewController: SekenViewController {
                     self.hideActivityIndicator()
                 }, env: .dev)
                 
-          }else{
-                AlertViewManager.shared.ShowOkAlert(title: "Error!", message: "Please enter valid OTP", handler: nil)
-                
-            }
+//          }else{
+//                AlertViewManager.shared.ShowOkAlert(title: "Error!", message: "Please enter valid OTP", handler: nil)
+//
+//            }
         
     }
 }
+    
     
 func navigateCreatePasswordVC() {
     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)

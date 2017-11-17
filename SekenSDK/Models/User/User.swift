@@ -26,7 +26,7 @@ public class User : NSObject, NSCoding {
         self.id = userDict.value(forKeyPath: "user.uid") as? String ?? ""
         self.token = userDetails["token"] as? String ?? ""
         SekenAPI.sharedAPI.sessionToken = self.token
-        self.phone = userDict.value(forKeyPath: "user.phone") as? String ?? ""
+        self.phone = userDict.value(forKeyPath: "user.field_phone_number") as? String ?? ""
         self.email = userDict.value(forKeyPath: "user.mail") as? String ?? ""
         self.otpValidated = userDict.value(forKeyPath: "user.field_otp_validated") as? String ?? ""
         self.env = environment

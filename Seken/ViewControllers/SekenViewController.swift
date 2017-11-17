@@ -116,8 +116,9 @@ class SekenViewController: UIViewController {
                 for var tempDict:[String:String] in array1 {
                     if(tempDict["code"] == countryCode){
                         let bundle = "assets.bundle/"
-                        image = UIImage(named: bundle + (tempDict["code"]?.lowercased())! + ".png", in: Bundle(for: MICountryPicker.self), compatibleWith: nil)!
+                         image = UIImage(named: bundle + countryCode.lowercased() + ".png", in: Bundle(for: MICountryPicker.self), compatibleWith: nil)!
                         countryCodeStr = tempDict["dial_code"]!
+                        break
                     }
                     
                 }

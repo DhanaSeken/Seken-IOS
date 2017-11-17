@@ -27,6 +27,7 @@ class OTPViewController: SekenViewController {
     @IBOutlet weak var sourceView: UIImageView!
     @IBOutlet weak var btnSubmit: SekenButton!
     @IBOutlet weak var btnResend: UIButton!
+    @IBOutlet weak var lblmessage: UILabel!
     
     var phoneNumber:String = ""
     var email:String = ""
@@ -38,6 +39,7 @@ class OTPViewController: SekenViewController {
     var pulsulator: Pulsator!
     var timer : Timer!
     var second = 0
+    var message:String = "We will send an confirmation code to your mobile number in 60 Seconds"
     
     
     override func viewDidLoad() {
@@ -66,6 +68,7 @@ class OTPViewController: SekenViewController {
         super.viewDidLayoutSubviews()
         view.layer.layoutIfNeeded()
         self.pulsulator.position = sourceView.layer.position
+        self.lblmessage.text = self.message;
     }
   
     override func viewWillAppear(_ animated: Bool) {
@@ -103,7 +106,7 @@ class OTPViewController: SekenViewController {
             
                let OTPStr = String(format: "%@%@%@%@",otp1,otp2,otp3,otp4)
                print(OTPStr)
-            if self.otpStr == OTPStr {
+           // if self.otpStr == OTPStr {
                  self.showActivityIndicator()
                 UserAPI.sharedAPI.performValidateOTP(phoneNumber: self.phoneNumber, email: self.email, OTP: self.otpStr, method: "POST", successHandler: {
                     self.hideActivityIndicator()
@@ -127,11 +130,8 @@ class OTPViewController: SekenViewController {
                     self.hideActivityIndicator()
                     AlertViewManager.shared.ShowOkAlert(title: "Error!", message: errorDescrpition, handler: nil)
                 }, env: .dev)
-            }else{
-                 AlertViewManager.shared.ShowOkAlert(title: "Error!", message: "Please enter valid OTP", handler: nil)
-            }
-           
-            
+   
+
             
         }
 }
@@ -192,6 +192,7 @@ class OTPViewController: SekenViewController {
        
      
     }
+
     
     func generateOTP() {
         self.showActivityIndicator()

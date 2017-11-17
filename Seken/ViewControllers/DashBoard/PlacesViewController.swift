@@ -67,7 +67,7 @@ class PlacesViewController: UIViewController,UICollectionViewDataSource,UICollec
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        return CGSize(width: 126  , height: 112)
+        return CGSize(width: 94  , height: 112)
         
     }
     

@@ -40,6 +40,7 @@ class DashBoardViewController: SekenViewController {
         self.setupShadow(view: self.budgetContainerView)
         UIApplication.shared.statusBarView?.backgroundColor = UIColor(red: 65/255, green: 154/255, blue: 198/255, alpha: 1.0)
           self.scrollView.contentSize = CGSize(width: UIScreen.main.bounds.size.width, height: (self.budgetContainerView.frame.origin.y+self.budgetContainerView.frame.size.height))
+        self.scrollView.setContentOffset(CGPoint(x:0,y:0), animated: false)
         
     }
 
@@ -86,10 +87,5 @@ class DashBoardViewController: SekenViewController {
 
 }
 
-extension UIApplication {
-    var statusBarView: UIView? {
-        return value(forKey: "statusBar") as? UIView
-    }
-}
 
 

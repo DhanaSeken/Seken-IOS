@@ -258,7 +258,7 @@
                                 <rect key="frame" x="91" y="285" width="257" height="43"/>
                                 <color key="textColor" red="0.43137254901960786" green="0.43137254901960786" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mail_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="4Ja-zQ-wIu">
                                 <rect key="frame" x="25" y="380" width="40" height="25"/>
@@ -267,7 +267,7 @@
                                 <rect key="frame" x="91" y="370" width="257" height="19"/>
                                 <color key="textColor" red="0.43137254901960786" green="0.43137254901960786" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FxY-HF-eVZ">
                                 <rect key="frame" x="22" y="369.5" width="49" height="29"/>
@@ -290,7 +290,7 @@
                                 <rect key="frame" x="89" y="428" width="257" height="43"/>
                                 <color key="textColor" red="0.43137254901960786" green="0.43137254901960786" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lkd-dK-bfp" customClass="SekenButton" customModule="Seken" customModuleProvider="target">
                                 <rect key="frame" x="98" y="503" width="180" height="46"/>
@@ -541,7 +541,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.43137254901960786" green="0.43137254901960786" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="WPF-SF-Arq" id="pde-lx-QIj"/>
                                 </connections>
@@ -553,7 +553,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.43137254901960786" green="0.43137254901960786" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="WPF-SF-Arq" id="XtA-hs-8bL"/>
                                 </connections>
@@ -637,10 +637,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QhR-IH-VXj">
-                                <rect key="frame" x="16" y="220" width="35" height="35"/>
+                                <rect key="frame" x="16" y="222" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="35" id="5yb-pX-ZTo"/>
-                                    <constraint firstAttribute="height" constant="35" id="yDF-Rw-5Qh"/>
+                                    <constraint firstAttribute="width" constant="30" id="5yb-pX-ZTo"/>
+                                    <constraint firstAttribute="height" constant="30" id="yDF-Rw-5Qh"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="Emailorphonenumber"/>
                                 <connections>
@@ -684,9 +684,9 @@
                             <constraint firstItem="0L0-C9-YTf" firstAttribute="leading" secondItem="Z2y-hP-cfk" secondAttribute="leading" constant="15" id="at2-wf-cq1"/>
                             <constraint firstItem="kKR-vz-Ai6" firstAttribute="centerX" secondItem="136-7P-JIm" secondAttribute="centerX" id="dxY-Nb-CHC"/>
                             <constraint firstItem="Z2y-hP-cfk" firstAttribute="trailing" secondItem="XoT-h5-ZJx" secondAttribute="trailing" constant="16" id="eEb-eg-1YI"/>
-                            <constraint firstItem="QZQ-tr-PGu" firstAttribute="top" secondItem="QhR-IH-VXj" secondAttribute="bottom" constant="12" id="era-Ku-Iw2"/>
+                            <constraint firstItem="QZQ-tr-PGu" firstAttribute="top" secondItem="QhR-IH-VXj" secondAttribute="bottom" constant="15" id="era-Ku-Iw2"/>
                             <constraint firstItem="kKR-vz-Ai6" firstAttribute="top" secondItem="136-7P-JIm" secondAttribute="top" constant="436" id="f8O-xx-J3D"/>
-                            <constraint firstItem="FDl-AB-Cq0" firstAttribute="leading" secondItem="QhR-IH-VXj" secondAttribute="trailing" constant="8" symbolic="YES" id="hB4-pP-sxK"/>
+                            <constraint firstItem="FDl-AB-Cq0" firstAttribute="leading" secondItem="QhR-IH-VXj" secondAttribute="trailing" constant="13" id="hB4-pP-sxK"/>
                             <constraint firstItem="0L0-C9-YTf" firstAttribute="top" secondItem="136-7P-JIm" secondAttribute="top" constant="305" id="lex-r5-bWx"/>
                             <constraint firstItem="OGY-HP-b0J" firstAttribute="centerX" secondItem="136-7P-JIm" secondAttribute="centerX" id="mF9-tJ-PdP"/>
                             <constraint firstItem="QhR-IH-VXj" firstAttribute="leading" secondItem="Z2y-hP-cfk" secondAttribute="leading" constant="16" id="noT-Ct-9t9"/>
@@ -711,6 +711,7 @@
                         <outlet property="btnLogin" destination="kKR-vz-Ai6" id="WdC-TC-Cn9"/>
                         <outlet property="btnShow" destination="vM5-1j-E5f" id="ejM-ZB-52O"/>
                         <outlet property="btnSignup" destination="Obe-XM-Srd" id="Ne9-ey-f3w"/>
+                        <outlet property="emailPhoneWidthConstarins" destination="5yb-pX-ZTo" id="b34-c2-0qn"/>
                         <outlet property="lblForgotPassword" destination="7cS-1R-dpj" id="dsT-lF-QFQ"/>
                         <outlet property="lblSignIn" destination="7bM-Hj-Obs" id="pZK-jV-Uce"/>
                         <outlet property="lblSignUp" destination="8Mu-as-iAr" id="jkC-0b-9O0"/>
@@ -759,12 +760,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xax-QJ-ojS">
-                                        <rect key="frame" x="19" y="28" width="69" height="35"/>
+                                        <rect key="frame" x="19" y="28" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="5X1-2i-SdI"/>
-                                            <constraint firstAttribute="width" constant="69" id="8RM-tC-4W6"/>
+                                            <constraint firstAttribute="width" constant="35" id="8RM-tC-4W6"/>
                                         </constraints>
-                                        <state key="normal" image="backBtn"/>
+                                        <state key="normal" image="arrow_white"/>
                                         <connections>
                                             <action selector="backbuttonClicked:" destination="nVC-eH-ARd" eventType="touchUpInside" id="j7O-T4-piI"/>
                                         </connections>
@@ -822,36 +823,202 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ngd-nN-dNN">
-                                <rect key="frame" x="29" y="340" width="38" height="38"/>
+                                <rect key="frame" x="29" y="346" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="6N2-MH-F3o"/>
+                                    <constraint firstAttribute="height" constant="30" id="Hhx-IU-krB"/>
+                                </constraints>
                                 <state key="normal" backgroundImage="Emailorphonenumber"/>
                                 <connections>
                                     <segue destination="4Jz-gC-oxu" kind="presentation" identifier="ContryCodeModalVC" id="p8X-Tr-R52"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXw-7M-6DJ">
+                                <rect key="frame" x="19" y="537" width="362" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="362" id="02C-Rf-GOL"/>
+                                    <constraint firstAttribute="height" constant="37" id="tta-lJ-lsB"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Didn’t receive a code?">
+                                        <attributes>
+                                            <color key="NSColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28.299999237060547">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56.650001525878906">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="85">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="113.34999847412109">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="141.69999694824219">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="170.05000305175781">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="198.39999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="226.75">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="255.10000610351562">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="283.45001220703125">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="311.79998779296875">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="340.14999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28.299999237060547">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56.650001525878906">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="85">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="113.34999847412109">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="141.69999694824219">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="170.05000305175781">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="198.39999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="226.75">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="255.10000610351562">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="283.45001220703125">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="311.79998779296875">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="340.14999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Resend">
+                                        <attributes>
+                                            <color key="NSColor" red="0.76795255829999998" green="0.26998209280000002" blue="0.27541303779999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28.299999237060547">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56.650001525878906">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="85">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="113.34999847412109">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="141.69999694824219">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="170.05000305175781">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="198.39999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="226.75">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="255.10000610351562">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="283.45001220703125">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="311.79998779296875">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="340.14999389648438">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXi-aE-apM">
+                                <rect key="frame" x="247" y="537" width="68" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="77q-gs-zci"/>
+                                    <constraint firstAttribute="width" constant="68" id="ak3-jf-FDM"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="resendButtonTouchUpinside:" destination="bel-Rt-AR4" eventType="touchUpInside" id="nUA-Rf-3rw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ngd-nN-dNN" firstAttribute="centerY" secondItem="LdT-oE-ha6" secondAttribute="centerY" constant="-2.5" id="20j-c7-DJP"/>
+                            <constraint firstItem="Ngd-nN-dNN" firstAttribute="centerY" secondItem="LdT-oE-ha6" secondAttribute="centerY" constant="-0.5" id="20j-c7-DJP"/>
                             <constraint firstItem="AD0-nH-UvQ" firstAttribute="top" secondItem="OyG-XA-wVO" secondAttribute="top" constant="475" id="6ro-Cc-xDz"/>
-                            <constraint firstItem="bdl-cU-Ma3" firstAttribute="top" secondItem="Ngd-nN-dNN" secondAttribute="bottom" constant="10" id="7sF-U2-jiZ"/>
+                            <constraint firstItem="bdl-cU-Ma3" firstAttribute="top" secondItem="Ngd-nN-dNN" secondAttribute="bottom" constant="12" id="7sF-U2-jiZ"/>
                             <constraint firstItem="Jey-n4-rmi" firstAttribute="top" secondItem="OyG-XA-wVO" secondAttribute="top" id="NaB-67-Zmv"/>
+                            <constraint firstItem="jom-XN-fgh" firstAttribute="trailing" secondItem="eXi-aE-apM" secondAttribute="trailing" constant="60" id="O5j-fr-S11"/>
+                            <constraint firstItem="TXw-7M-6DJ" firstAttribute="top" secondItem="AD0-nH-UvQ" secondAttribute="bottom" constant="17" id="ObA-FS-cBl"/>
                             <constraint firstItem="Jey-n4-rmi" firstAttribute="leading" secondItem="jom-XN-fgh" secondAttribute="leading" id="QiO-qh-yIE"/>
                             <constraint firstItem="Ngd-nN-dNN" firstAttribute="leading" secondItem="jom-XN-fgh" secondAttribute="leading" constant="29" id="RUE-C3-p23"/>
                             <constraint firstItem="bdl-cU-Ma3" firstAttribute="leading" secondItem="OyG-XA-wVO" secondAttribute="leading" constant="16" id="SDb-le-9ha"/>
                             <constraint firstItem="LdT-oE-ha6" firstAttribute="leading" secondItem="jom-XN-fgh" secondAttribute="leading" constant="75" id="Ugx-Ph-pcG"/>
                             <constraint firstItem="AD0-nH-UvQ" firstAttribute="centerX" secondItem="OyG-XA-wVO" secondAttribute="centerX" id="VYr-KV-rmP"/>
                             <constraint firstItem="Jey-n4-rmi" firstAttribute="trailing" secondItem="jom-XN-fgh" secondAttribute="trailing" id="Xwk-pd-wqi"/>
+                            <constraint firstItem="eXi-aE-apM" firstAttribute="top" secondItem="AD0-nH-UvQ" secondAttribute="bottom" constant="17" id="dka-bi-41F"/>
                             <constraint firstItem="jom-XN-fgh" firstAttribute="trailing" secondItem="LdT-oE-ha6" secondAttribute="trailing" constant="16" id="e1G-Fd-1J9"/>
-                            <constraint firstItem="LdT-oE-ha6" firstAttribute="leading" secondItem="Ngd-nN-dNN" secondAttribute="trailing" constant="8" id="i54-FU-p6x"/>
+                            <constraint firstItem="LdT-oE-ha6" firstAttribute="leading" secondItem="Ngd-nN-dNN" secondAttribute="trailing" constant="16" id="i54-FU-p6x"/>
                             <constraint firstItem="bdl-cU-Ma3" firstAttribute="top" secondItem="OyG-XA-wVO" secondAttribute="top" constant="388" id="pgp-5V-0za"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TXw-7M-6DJ" secondAttribute="trailing" constant="-22" id="qLL-wc-uFh"/>
                             <constraint firstAttribute="trailing" secondItem="bdl-cU-Ma3" secondAttribute="trailing" constant="16" id="ugl-6F-tvo"/>
                             <constraint firstItem="LdT-oE-ha6" firstAttribute="top" secondItem="Jey-n4-rmi" secondAttribute="bottom" constant="104" id="w0m-Fg-m9w"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jom-XN-fgh"/>
                     </view>
                     <connections>
-                        <outlet property="btnEmailPass" destination="Ngd-nN-dNN" id="Zg7-nQ-UuT"/>
+                        <outlet property="btnEmailPass" destination="Ngd-nN-dNN" id="SOR-F6-oEy"/>
                         <outlet property="btnOTP" destination="AD0-nH-UvQ" id="UBB-78-8u9"/>
+                        <outlet property="emailPhoneWidthConstarins" destination="6N2-MH-F3o" id="OFl-Go-xVL"/>
                         <outlet property="lblDescption" destination="SES-ee-fej" id="LUD-X0-AOv"/>
                         <outlet property="lblHeader" destination="ZOk-Z1-pTr" id="m6F-O2-1x7"/>
                         <outlet property="txtPhoneNumber" destination="LdT-oE-ha6" id="cPr-k2-HcC"/>
@@ -859,7 +1026,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ser-eD-6QH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1260" y="1404.6476761619192"/>
+            <point key="canvasLocation" x="998" y="1570"/>
         </scene>
         <!--VerifyOTP View Controller-->
         <scene sceneID="HKt-54-4YI">
@@ -954,7 +1121,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="-" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fsq-bD-5TK">
                                         <rect key="frame" x="102" y="77" width="67" height="43"/>
@@ -964,7 +1131,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="-" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jTk-Oq-7VT">
                                         <rect key="frame" x="179" y="77" width="67" height="43"/>
@@ -974,7 +1141,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="-" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PaV-xa-nkC">
                                         <rect key="frame" x="256" y="77" width="67" height="43"/>
@@ -984,7 +1151,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhI-Y4-dHu">
                                         <rect key="frame" x="23" y="120" width="67" height="1"/>
@@ -1068,12 +1235,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPe-Bc-TnE">
-                                <rect key="frame" x="20" y="35" width="69" height="35"/>
+                                <rect key="frame" x="20" y="28" width="35" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="69" id="9Rc-Mh-yAX"/>
+                                    <constraint firstAttribute="width" constant="35" id="9Rc-Mh-yAX"/>
                                     <constraint firstAttribute="height" constant="35" id="Hzu-2X-XaR"/>
                                 </constraints>
-                                <state key="normal" image="backBtn"/>
+                                <state key="normal" image="arrow_white"/>
                                 <connections>
                                     <action selector="backbuttonClicked:" destination="Im2-jI-XIp" eventType="touchUpInside" id="xIb-A9-NL0"/>
                                 </connections>
@@ -1092,7 +1259,7 @@
                             <constraint firstItem="3aV-id-5Qh" firstAttribute="leading" secondItem="xC9-zM-Oqd" secondAttribute="leading" id="eiU-Li-nFE"/>
                             <constraint firstItem="3aV-id-5Qh" firstAttribute="top" secondItem="4VK-gb-z3c" secondAttribute="top" id="pAN-2c-YTA"/>
                             <constraint firstItem="3aV-id-5Qh" firstAttribute="leading" secondItem="xC9-zM-Oqd" secondAttribute="leading" id="uSb-iu-QOr"/>
-                            <constraint firstItem="YPe-Bc-TnE" firstAttribute="top" secondItem="xC9-zM-Oqd" secondAttribute="top" constant="15" id="wL5-Z0-92M"/>
+                            <constraint firstItem="YPe-Bc-TnE" firstAttribute="top" secondItem="xC9-zM-Oqd" secondAttribute="top" constant="8" id="wL5-Z0-92M"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xC9-zM-Oqd"/>
                     </view>
@@ -1213,12 +1380,12 @@
                                 <state key="normal" image="Password_Icon"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJv-xV-5tL">
-                                <rect key="frame" x="20" y="37" width="69" height="31"/>
+                                <rect key="frame" x="20" y="28" width="35" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="KKH-FS-aiM"/>
-                                    <constraint firstAttribute="width" constant="69" id="k7b-cA-2o1"/>
+                                    <constraint firstAttribute="height" constant="35" id="KKH-FS-aiM"/>
+                                    <constraint firstAttribute="width" constant="35" id="k7b-cA-2o1"/>
                                 </constraints>
-                                <state key="normal" image="backBtn"/>
+                                <state key="normal" image="arrow_white"/>
                                 <connections>
                                     <action selector="backbuttonClicked:" destination="TeD-Re-Cxo" eventType="touchUpInside" id="3be-z1-Ug5"/>
                                 </connections>
@@ -1237,7 +1404,7 @@
                             <constraint firstItem="ShV-9r-iEj" firstAttribute="trailing" secondItem="4qd-IT-8hj" secondAttribute="trailing" id="kn9-jP-CGR"/>
                             <constraint firstItem="JQo-tt-bPQ" firstAttribute="top" secondItem="ian-DR-Gg1" secondAttribute="bottom" constant="130" id="nWr-4G-0mP"/>
                             <constraint firstItem="GfH-8K-cyO" firstAttribute="leading" secondItem="4qd-IT-8hj" secondAttribute="leading" constant="58" id="owY-l3-i2N"/>
-                            <constraint firstItem="eJv-xV-5tL" firstAttribute="top" secondItem="4qd-IT-8hj" secondAttribute="top" constant="17" id="s6j-JF-cI0"/>
+                            <constraint firstItem="eJv-xV-5tL" firstAttribute="top" secondItem="4qd-IT-8hj" secondAttribute="top" constant="8" id="s6j-JF-cI0"/>
                             <constraint firstItem="8Eg-Uq-VmL" firstAttribute="top" secondItem="ShV-9r-iEj" secondAttribute="bottom" constant="101" id="vGP-yR-GNX"/>
                             <constraint firstItem="ian-DR-Gg1" firstAttribute="top" secondItem="5ee-6K-0yX" secondAttribute="top" constant="381" id="zda-kK-2oW"/>
                             <constraint firstItem="eJv-xV-5tL" firstAttribute="leading" secondItem="4qd-IT-8hj" secondAttribute="leading" constant="20" id="zrj-hf-KPC"/>
@@ -1255,7 +1422,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rE3-ae-CCm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3045.5999999999999" y="1617.8410794602701"/>
+            <point key="canvasLocation" x="3017" y="1676"/>
         </scene>
         <!--Contry Code ModalVC-->
         <scene sceneID="Ga3-S6-dVB">
@@ -1409,7 +1576,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ooy-wM-0FD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2653.5999999999999" y="929.68515742128943"/>
+            <point key="canvasLocation" x="2753" y="928"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="apG-Vh-FKg">
@@ -1505,7 +1672,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.43137254901960786" green="0.43137254901960786" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="FullName" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Ct-nz-Fuf">
                                 <rect key="frame" x="98" y="188" width="241" height="43"/>
@@ -1535,7 +1702,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.43137254901960786" green="0.43137254901960786" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7UJ-pK-mZI">
                                 <rect key="frame" x="291" y="360" width="46" height="30"/>
@@ -1785,7 +1952,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.43137254901960786" green="0.43137254901960786" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="983-Eo-ZNd">
                                 <rect key="frame" x="15" y="35" width="70" height="35"/>
@@ -1887,7 +2054,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nqp-7N-1pR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1970.4000000000001" y="194.75262368815595"/>
+            <point key="canvasLocation" x="2126" y="140"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bvQ-qo-OVl">
@@ -2224,6 +2391,7 @@
                         <outlet property="btnResend" destination="VcC-sA-3gC" id="jyh-Ec-Log"/>
                         <outlet property="btnSubmit" destination="y9w-fN-ZFI" id="W55-Br-QSO"/>
                         <outlet property="lblPhoneNumber" destination="94J-Ey-0es" id="vWl-p3-1z4"/>
+                        <outlet property="lblmessage" destination="uRs-Wr-T0g" id="QNG-a6-MIs"/>
                         <outlet property="sourceView" destination="NRU-4v-H38" id="uig-Zp-X6z"/>
                         <outlet property="txtOTP1" destination="1up-Ah-fhu" id="gLH-jW-dik"/>
                         <outlet property="txtOTP2" destination="bbP-Gr-af1" id="f1t-bB-SOf"/>
@@ -2233,7 +2401,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJG-0R-2cg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2752.8000000000002" y="176.76161919040482"/>
+            <point key="canvasLocation" x="3017" y="140"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fQ4-7c-tgj">
@@ -2280,6 +2448,7 @@
         <image name="Signin" width="35" height="35"/>
         <image name="Signup" width="35" height="35"/>
         <image name="User_Icon" width="25" height="25"/>
+        <image name="arrow_white" width="50" height="50"/>
         <image name="backBtn" width="25" height="25"/>
         <image name="forgotpassword" width="143" height="143"/>
         <image name="soudi" width="36" height="36"/>
@@ -2287,7 +2456,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="T0e-p5-aTI"/>
         <segue reference="gUL-rM-Jvk"/>
-        <segue reference="ZGj-nK-Bdm"/>
+        <segue reference="p8X-Tr-R52"/>
         <segue reference="ctk-g9-OHn"/>
     </inferredMetricsTieBreakers>
 </document>

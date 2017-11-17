@@ -237,6 +237,9 @@ class SignupViewController: SekenViewController,ContryCodeModalVCDelegate,OTPVie
         
     }
     
+    @IBAction override func backbuttonClicked(_ sender: AnyObject) {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
 
 }
 

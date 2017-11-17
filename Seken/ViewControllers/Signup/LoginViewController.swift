@@ -39,6 +39,7 @@ class LoginViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
     @IBOutlet weak var btnForgotPassword: UIButton!
     var countryCode:String = ""
     
+    @IBOutlet weak var emailPhoneWidthConstarins: NSLayoutConstraint!
     
     // Life Cycle Methods
     override func viewDidLoad() {
@@ -65,7 +66,7 @@ class LoginViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
     
     //Button Handler
     @IBAction func loginButtonClicked(_ sender: Any) {
-        if let userName = self.txtUserName.text, userName.characters.count > 0, let password = self.txtPassword.text, password.characters.count > 0 {
+        if var userName = self.txtUserName.text, userName.characters.count > 0, let password = self.txtPassword.text, password.characters.count > 0 {
             
             if self.isValidEmail(testStr: userName) {
                  self.showActivityIndicator()
@@ -78,6 +79,12 @@ class LoginViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
                 }, env: .dev)
             }else{
                  self.showActivityIndicator()
+                if (self.countryCode == "966") {
+                    if userName.characters.count == 10 {
+                        userName =  String(userName.dropFirst())
+                    }
+                    
+                }
                 UserAPI.sharedAPI.performLogin(userName: String(format: "%@%@",self.countryCode,userName), password: password, method: "POST", successHandler: {
                     self.hideActivityIndicator()
                     self.navigateNextScreen()
@@ -102,13 +109,11 @@ class LoginViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
         }
     }
     
+    
+    
     func pushDashboardVC()  {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.showDashBoard()
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Dashboard", bundle:nil)
-//        let dashboardVC = storyBoard.instantiateViewController(withIdentifier: "DashBoardViewController") as! DashBoardViewController
-//        self.navigationController?.pushViewController(dashboardVC, animated: true)
-        // self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     func PresentOTPModal() {
@@ -119,6 +124,7 @@ class LoginViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
         otpViewController.email = (UserManager.shared.currentUser?.email)!
         otpViewController.password = self.txtPassword.text!
         otpViewController.disPlayPhoneNumber = String(format: "+%@-%@",self.countryCode,self.txtUserName.text!)
+        otpViewController.message = "Please verify your mobilenumber to continue"
         otpViewController.delegate = self;
         self.present(otpViewController, animated:true, completion:nil)
         
@@ -254,38 +260,51 @@ class LoginViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
     {
-          let newString = NSString(string: textField.text!).replacingCharacters(in: range, with: string)
-
-    if (newString as NSString?) != nil {
-        
-        if newString.characters.count>0 {
+        if textField == self.txtUserName{
+            let newString = NSString(string: textField.text!).replacingCharacters(in: range, with: string)
             
-            if (newString.isStringAnInt()) {
-                var dict = super.getcountryCode()
-                countryCode = dict["dial_code"] as! String
-                let btnImage = dict["flag"] as? UIImage
-                self.btnEmailPass.isUserInteractionEnabled = true
-                self.btnEmailPass.setBackgroundImage(btnImage, for: .normal)
-               
-            }else {
-                let btnImage = UIImage(named: "Mail_Icon")
-                self.btnEmailPass.isUserInteractionEnabled = false
-                self.btnEmailPass.setBackgroundImage(btnImage, for: .normal)
+            if (newString as NSString?) != nil {
+                
+                if newString.characters.count>0 {
+                    
+                    if (newString.isStringAnInt()) {
+                        var dict = super.getcountryCode()
+                        countryCode = dict["dial_code"] as! String
+                        let btnImage = dict["flag"] as? UIImage
+                        self.btnEmailPass.isUserInteractionEnabled = true
+                        self.btnEmailPass.setBackgroundImage(btnImage, for: .normal)
+                        self.emailPhoneWidthConstarins.constant = 40
+                        self.view.layoutIfNeeded()
+                        
+                    }else {
+                        let btnImage = UIImage(named: "Mail_Icon")
+                        self.btnEmailPass.isUserInteractionEnabled = false
+                        self.btnEmailPass.setBackgroundImage(btnImage, for: .normal)
+                        self.emailPhoneWidthConstarins.constant = 30
+                        self.view.layoutIfNeeded()
+                    }
+                }else{
+                    let btnImage = UIImage(named: "Emailorphonenumber")
+                    self.btnEmailPass.setBackgroundImage(btnImage, for: .normal)
+                    self.btnEmailPass.isUserInteractionEnabled = false
+                    self.emailPhoneWidthConstarins.constant = 30
+                    self.view.layoutIfNeeded()
+                    
+                }
+                
+                
             }
-        }else{
-            let btnImage = UIImage(named: "Emailorphonenumber")
-            self.btnEmailPass.setBackgroundImage(btnImage, for: .normal)
-            self.btnEmailPass.isUserInteractionEnabled = false
             
+            return true
         }
         
-
-        }
-
-        return true
-  }
-    
-    
+            
+      
+     return true
+}
+    @IBAction override func backbuttonClicked(_ sender: AnyObject) {
+        _ = self.navigationController?.popToRootViewController(animated: true)
+    }
     
 }
 

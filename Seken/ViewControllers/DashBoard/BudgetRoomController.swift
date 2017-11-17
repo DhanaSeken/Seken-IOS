@@ -36,7 +36,7 @@ class BudgetRoomController: UIViewController,UICollectionViewDelegate,UICollecti
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopRatedCell", for: indexPath as IndexPath) as! TopRatedCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BudgetCell", for: indexPath as IndexPath) as! TopRatedCell
         
         
         let bcolor : UIColor = UIColor( red: 0.2, green: 0.2, blue:0.2, alpha: 0.3 )
@@ -60,6 +60,7 @@ class BudgetRoomController: UIViewController,UICollectionViewDelegate,UICollecti
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
+  
         return CGSize(width: 160  , height: 211)
         
     }

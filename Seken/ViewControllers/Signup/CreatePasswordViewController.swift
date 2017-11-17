@@ -31,7 +31,7 @@ class CreatePasswordViewController: SekenViewController {
     @IBAction func saveButtonTouchUpInside(_ sender: Any) {
         
         if let password = self.txtPassword.text, password.characters.count > 0 {
-            if self.isPasswordValid(password){
+            //if self.isPasswordValid(password){
                 self.showActivityIndicator()
                 UserAPI.sharedAPI.performForgotUpdatePassword(phoneNumber: self.phoneNumber, email: self.email, password: password, method: "POST", successHandler: {
                     self.hideActivityIndicator()
@@ -45,9 +45,9 @@ class CreatePasswordViewController: SekenViewController {
                     self.hideActivityIndicator()
                     AlertViewManager.shared.ShowOkAlert(title: "Error!", message: errorMessage, handler: nil)
                 }, env: .dev)
-            }else{
-                AlertViewManager.shared.ShowOkAlert(title: "Error!", message: "Please enter valid password!", handler: nil)
-            }
+//            }else{
+//                AlertViewManager.shared.ShowOkAlert(title: "Error!", message: "Please enter valid password!", handler: nil)
+//            }
           
         }else{
              AlertViewManager.shared.ShowOkAlert(title: "Error!", message: "Password should not be empty!", handler: nil)
