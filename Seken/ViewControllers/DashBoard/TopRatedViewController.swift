@@ -7,20 +7,26 @@
 //
 
 import UIKit
+import SekenSDK
+import SDWebImage
 
 class TopRatedViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     
     @IBOutlet var collectionview: UICollectionView!
+    @IBOutlet var noElementLabe: UILabel!
+    
     struct TopRatedRoom
     {
-        var imgRoom:UIImage
+        var imgRoom:String
         var name:String
         var price:String
-        init(name:String, imgRoom:UIImage,price:String)
+        var favouraite:String
+        init(name:String, imgRoom:String,price:String,favouraite:String)
         {
             self.name = name
             self.imgRoom = imgRoom
             self.price = price
+            self.favouraite = favouraite
         }
     }
     
@@ -30,9 +36,27 @@ class TopRatedViewController: UIViewController,UICollectionViewDelegate,UICollec
         super.viewDidLoad()
         
         collectionview.reloadData()
+         self.noElementLabe.isHidden = true;
 
         // Do any additional setup after loading the view.
     }
+    
+    func refreshCollectionView(hotelRooms:[HotelRoom])  {
+      
+ 
+        if hotelRooms.count == 0{
+              self.noElementLabe.isHidden = false;
+        }else{
+            self.noElementLabe.isHidden = true;
+            for var hotelRoomInstance:HotelRoom in hotelRooms {
+                let add_it = TopRatedRoom(name: hotelRoomInstance.name, imgRoom: hotelRoomInstance.image, price: hotelRoomInstance.price, favouraite: hotelRoomInstance.favourite)
+                Data.append(add_it)
+                
+            }
+            collectionview.reloadData()
+     }
+       
+   }
     
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
@@ -47,6 +71,9 @@ class TopRatedViewController: UIViewController,UICollectionViewDelegate,UICollec
         cell.layer.cornerRadius = 3
         
         cell.backgroundColor=UIColor.white
+        cell.lblName.text =  Data[indexPath.row].name
+        cell.imgRoom.sd_setImage(with: URL(string: Data[indexPath.row].imgRoom), placeholderImage: UIImage(named: "riyadh"))
+        cell.lblPrice.text = String(format: "%@500/night",Data[indexPath.row].price)
         
         return cell
     }
@@ -54,7 +81,7 @@ class TopRatedViewController: UIViewController,UICollectionViewDelegate,UICollec
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return 10
+        return Data.count
     }
     
     func collectionView(collectionView: UICollectionView,

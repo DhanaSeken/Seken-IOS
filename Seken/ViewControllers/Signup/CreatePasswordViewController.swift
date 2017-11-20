@@ -30,7 +30,7 @@ class CreatePasswordViewController: SekenViewController {
 
     @IBAction func saveButtonTouchUpInside(_ sender: Any) {
         
-        if let password = self.txtPassword.text, password.characters.count > 0 {
+        if let password = self.txtPassword.text, password.count > 0 {
             //if self.isPasswordValid(password){
                 self.showActivityIndicator()
                 UserAPI.sharedAPI.performForgotUpdatePassword(phoneNumber: self.phoneNumber, email: self.email, password: password, method: "POST", successHandler: {

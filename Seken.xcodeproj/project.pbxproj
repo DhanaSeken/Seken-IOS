@@ -22,8 +22,14 @@
 		368094471F96208D00A1489F /* CountryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368094461F96208D00A1489F /* CountryCode.swift */; };
 		3680944A1F9639ED00A1489F /* CountryCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368094491F9639ED00A1489F /* CountryCodeCell.swift */; };
 		3680944C1F9764D000A1489F /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3680944B1F9764D000A1489F /* StringUtils.swift */; };
+		3686CC781FC16FA70065BEC6 /* Locality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3686CC771FC16FA70065BEC6 /* Locality.swift */; };
+		3686CC7A1FC16FC70065BEC6 /* HotelRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3686CC791FC16FC70065BEC6 /* HotelRoom.swift */; };
+		3686CC7C1FC178110065BEC6 /* DashboardAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3686CC7B1FC178110065BEC6 /* DashboardAPI.swift */; };
+		3686CC7E1FC17BE70065BEC6 /* DashBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3686CC7D1FC17BE70065BEC6 /* DashBoard.swift */; };
+		3686CC801FC1C93A0065BEC6 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3686CC7F1FC1C93A0065BEC6 /* Home.storyboard */; };
 		368E16961FA4833D00FDEE30 /* SocialSignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368E16951FA4833D00FDEE30 /* SocialSignupController.swift */; };
 		369F517E1F8B76CE00A0FF57 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369F517D1F8B76CE00A0FF57 /* OTPViewController.swift */; };
+		36B31AEF1FC02A8A004B7925 /* locationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B31AEE1FC02A8A004B7925 /* locationCell.xib */; };
 		36B3CE561F8B9CCD004C6CB4 /* SekenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B3CE551F8B9CCD004C6CB4 /* SekenButton.swift */; };
 		36B535DA1FBC7313005E2B37 /* Pulsator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B535D91FBC7313005E2B37 /* Pulsator.swift */; };
 		36B535DD1FBD0C60005E2B37 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B535DC1FBD0C60005E2B37 /* PlaceCell.swift */; };
@@ -135,8 +141,14 @@
 		368094461F96208D00A1489F /* CountryCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCode.swift; sourceTree = "<group>"; };
 		368094491F9639ED00A1489F /* CountryCodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodeCell.swift; sourceTree = "<group>"; };
 		3680944B1F9764D000A1489F /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
+		3686CC771FC16FA70065BEC6 /* Locality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locality.swift; sourceTree = "<group>"; };
+		3686CC791FC16FC70065BEC6 /* HotelRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelRoom.swift; sourceTree = "<group>"; };
+		3686CC7B1FC178110065BEC6 /* DashboardAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardAPI.swift; sourceTree = "<group>"; };
+		3686CC7D1FC17BE70065BEC6 /* DashBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoard.swift; sourceTree = "<group>"; };
+		3686CC7F1FC1C93A0065BEC6 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		368E16951FA4833D00FDEE30 /* SocialSignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignupController.swift; sourceTree = "<group>"; };
 		369F517D1F8B76CE00A0FF57 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		36B31AEE1FC02A8A004B7925 /* locationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = locationCell.xib; sourceTree = "<group>"; };
 		36B3CE551F8B9CCD004C6CB4 /* SekenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SekenButton.swift; sourceTree = "<group>"; };
 		36B535D91FBC7313005E2B37 /* Pulsator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pulsator.swift; sourceTree = "<group>"; };
 		36B535DC1FBD0C60005E2B37 /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
@@ -277,6 +289,41 @@
 			path = CustomCells;
 			sourceTree = "<group>";
 		};
+		3686CC761FC16F600065BEC6 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				3686CC771FC16FA70065BEC6 /* Locality.swift */,
+				3686CC791FC16FC70065BEC6 /* HotelRoom.swift */,
+				3686CC7D1FC17BE70065BEC6 /* DashBoard.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		36B31AEB1FC029FD004B7925 /* CustomCellDesign */ = {
+			isa = PBXGroup;
+			children = (
+				36B31AEC1FC02A26004B7925 /* Dashboard */,
+				3686CC7F1FC1C93A0065BEC6 /* Home.storyboard */,
+			);
+			path = CustomCellDesign;
+			sourceTree = "<group>";
+		};
+		36B31AEC1FC02A26004B7925 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				36B31AED1FC02A4A004B7925 /* searchLocation */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		36B31AED1FC02A4A004B7925 /* searchLocation */ = {
+			isa = PBXGroup;
+			children = (
+				36B31AEE1FC02A8A004B7925 /* locationCell.xib */,
+			);
+			path = searchLocation;
+			sourceTree = "<group>";
+		};
 		36B535DB1FBD0C21005E2B37 /* CustomCollectionviewCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +419,7 @@
 		36DBAC8B1F873EC200D7D0EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				36B31AEB1FC029FD004B7925 /* CustomCellDesign */,
 				360F077A1FA2019E00414EE7 /* Dashboard.storyboard */,
 				36DBACCE1F8755ED00D7D0EA /* Main.storyboard */,
 				36DBAC8C1F873EDA00D7D0EA /* CustomViews */,
@@ -450,6 +498,7 @@
 		36DBACB61F87413300D7D0EA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3686CC761FC16F600065BEC6 /* Dashboard */,
 				36DBACB91F87424400D7D0EA /* User */,
 				36DBACB81F87422900D7D0EA /* Genral */,
 			);
@@ -461,6 +510,7 @@
 			children = (
 				36DBACBE1F87434800D7D0EA /* SekenAPI.swift */,
 				180094BB1F9A1972006A7AF3 /* UserAPI.swift */,
+				3686CC7B1FC178110065BEC6 /* DashboardAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -693,7 +743,9 @@
 				360C20E51F90D0AE00102192 /* DropDown in Resources */,
 				36DBACC81F87493400D7D0EA /* SanFranciscoFont-master in Resources */,
 				36DBAC631F873B2900D7D0EA /* Assets.xcassets in Resources */,
+				36B31AEF1FC02A8A004B7925 /* locationCell.xib in Resources */,
 				36DBACCF1F8755ED00D7D0EA /* Main.storyboard in Resources */,
+				3686CC801FC1C93A0065BEC6 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -868,6 +920,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Seken/Pods-Seken-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
@@ -877,13 +930,15 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IHKeyboardAvoiding/IHKeyboardAvoiding.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MICountryPicker/MICountryPicker.framework",
-				"${BUILT_PRODUCTS_DIR}/MRCountryPicker/MRCountryPicker.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
@@ -893,9 +948,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IHKeyboardAvoiding.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MICountryPicker.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MRCountryPicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -965,11 +1021,15 @@
 			files = (
 				36108A351F9F08060000F194 /* UserManager.swift in Sources */,
 				36DBACBD1F87430400D7D0EA /* User.swift in Sources */,
+				3686CC781FC16FA70065BEC6 /* Locality.swift in Sources */,
 				36DBACBB1F87426900D7D0EA /* Image.swift in Sources */,
+				3686CC7A1FC16FC70065BEC6 /* HotelRoom.swift in Sources */,
 				36108A371F9F08440000F194 /* LocationManager.swift in Sources */,
 				36DBACBF1F87434800D7D0EA /* SekenAPI.swift in Sources */,
 				180094BC1F9A1972006A7AF3 /* UserAPI.swift in Sources */,
 				36DBACC11F87440F00D7D0EA /* Device.swift in Sources */,
+				3686CC7C1FC178110065BEC6 /* DashboardAPI.swift in Sources */,
+				3686CC7E1FC17BE70065BEC6 /* DashBoard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

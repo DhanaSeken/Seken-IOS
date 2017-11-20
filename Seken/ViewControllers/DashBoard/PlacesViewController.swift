@@ -7,17 +7,27 @@
 //
 
 import UIKit
+import SekenSDK
+import SDWebImage
 
 class PlacesViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     @IBOutlet var collectionview: UICollectionView!
+     @IBOutlet var lblTitle: UILabel!
+    @IBOutlet weak var noElementLabel: UILabel!
+    
     struct Place
     {
-        var flag:UIImage
+        var flag:String
         var name:String
-        init(name:String, flag:UIImage)
+        var lat:String
+        var long:String
+        init(name:String, flag:String,long:String,lat:String)
         {
             self.name = name
             self.flag = flag
+            self.long = long
+            self.lat = lat
+            
         }
     }
     
@@ -26,10 +36,27 @@ class PlacesViewController: UIViewController,UICollectionViewDataSource,UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
+        self.noElementLabel.isHidden = true;
         collectionview.reloadData()
 
         // Do any additional setup after loading the view.
+    }
+    
+   func refreshCollectionView(localities:[Locality])  {
+    
+    if localities.count == 0{
+        self.noElementLabel.isHidden = false;
+    }else{
+        self.noElementLabel.isHidden = true;
+        for var locality:Locality in localities {
+            let add_it = Place(name: locality.name, flag: locality.imagURL, long: locality.lat, lat: locality.long)
+            Data.append(add_it)
+            
+        }
+        collectionview.reloadData()
+    }
+    
+        
     }
     
     
@@ -46,10 +73,9 @@ class PlacesViewController: UIViewController,UICollectionViewDataSource,UICollec
         cell.layer.cornerRadius = 3
         
         cell.backgroundColor=UIColor.white
-        
-        
-//        cell.imgFlage.image =  Data[indexPath.row].flag
-//        cell.lblName.text = Data[indexPath.row].name
+        cell.imgFlag.sd_setImage(with: URL(string: Data[indexPath.row].flag), placeholderImage: UIImage(named: "riyadh"))
+        cell.lblName.text =  Data[indexPath.row].name
+
 
         
         
@@ -60,7 +86,7 @@ class PlacesViewController: UIViewController,UICollectionViewDataSource,UICollec
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return 10
+        return Data.count
     }
     
     func collectionView(collectionView: UICollectionView,

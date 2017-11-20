@@ -9,7 +9,6 @@
 import UIKit
 
 class MICountry: NSObject {
-    
     @objc let name: String
     let code: String
     var section: Int?

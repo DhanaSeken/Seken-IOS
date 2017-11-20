@@ -147,16 +147,16 @@ class SignupViewController: SekenViewController,ContryCodeModalVCDelegate,OTPVie
     
     @IBAction func signupButtonCliked(_ sender: Any) {
         
-          if let userName = self.txtFullName.text, userName.characters.count > 0, let email = self.txtEmail.text, email.characters.count > 0,var phonenumber = self.txtPhoneNumber.text, phonenumber.characters.count > 0,let password = self.txtPassword.text, password.characters.count > 0 {
+          if let userName = self.txtFullName.text, userName.count > 0, let email = self.txtEmail.text, email.count > 0,var phonenumber = self.txtPhoneNumber.text, phonenumber.count > 0,let password = self.txtPassword.text, password.count > 0 {
             
                 if (self.countryCodeStr == "966") {
-                    if phonenumber.characters.count == 10 {
+                    if phonenumber.count == 10 {
                          phonenumber =  String(phonenumber.dropFirst())
                     }
                    
                 }
                 
-                if((((self.countryCodeStr == "966" && phonenumber.characters.count == 9) || (self.countryCodeStr == "91" && phonenumber.characters.count == 10))) && self.isValidEmail(testStr: email)) {
+                if((((self.countryCodeStr == "966" && phonenumber.count == 9) || (self.countryCodeStr == "91" && phonenumber.count == 10))) && self.isValidEmail(testStr: email)) {
                     self.showActivityIndicator()
                     UserAPI.sharedAPI.performSignup(mail: email, password: password, fieldPhoneNumber: String(format: "%@%@",self.countryCodeStr,phonenumber), fieldFullName: userName, referalCode: self.getReferalCode(), fieldDeviceType: "ios", method: "POST", successHandler: {
                         self.hideActivityIndicator()
@@ -220,7 +220,7 @@ class SignupViewController: SekenViewController,ContryCodeModalVCDelegate,OTPVie
     }
     
     func getReferalCode() -> String {
-        if let text = txtReferralCode.text, text.characters.count > 0 {
+        if let text = txtReferralCode.text, text.count > 0 {
             return text
         } else {
             return ""

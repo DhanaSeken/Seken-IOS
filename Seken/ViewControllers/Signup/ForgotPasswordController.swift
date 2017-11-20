@@ -44,7 +44,7 @@ class ForgotPasswordController: SekenViewController,ContryCodeModalVCDelegate,UI
     
     @IBAction func otpButtonTouchupInside(_ sender: Any) {
         
-        if let userName = self.txtPhoneNumber.text, userName.characters.count > 0 {
+        if let userName = self.txtPhoneNumber.text, userName.count > 0 {
             
             if self.isValidEmail(testStr: userName) {
                 email = userName
@@ -110,7 +110,7 @@ class ForgotPasswordController: SekenViewController,ContryCodeModalVCDelegate,UI
         
         if (newString as NSString?) != nil {
             
-            if newString.characters.count>0 {
+            if newString.count>0 {
                 
                 if (newString.isStringAnInt()) {
                     var dict = super.getcountryCode()

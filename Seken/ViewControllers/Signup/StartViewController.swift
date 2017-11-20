@@ -89,26 +89,29 @@ class StartViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
         self.showActivityIndicator()
         let loginManager = LoginManager()
        loginManager.loginBehavior = .native
-        loginManager.logIn([ .publicProfile,.email,.userFriends ], viewController: self) { loginResult in
-            self.hideActivityIndicator()
-            switch loginResult {
-            case .failed(let error):
+        
+        
+        loginManager.logIn(readPermissions: [ .publicProfile,.email,.userFriends ], viewController: self) { loginResult in
+             self.hideActivityIndicator()
+             switch loginResult {
+             case .failed(let error):
                 print(error)
-            case .cancelled:
+             case .cancelled:
                 print("User cancelled login.")
-            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
+             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
                 print("Logged in!")
                 self.hideActivityIndicator()
                 print (grantedPermissions)
                 print (declinedPermissions)
-                print (accessToken)
-                // self.calFaceBookLoginService(faceBookId: accessToken.appId, accessToken: accessToken.authenticationToken)
+                  print (accessToken)
                 self.socialSignupType = "FaceBook"
                 self.identifier = accessToken.userId!
                 self.calSocialSingin(type: "FaceBook", identifier: accessToken.userId!)
-                
             }
+            
         }
+        
+
     }
     @IBAction func googleButtonCliked(_ sender: Any) {
         

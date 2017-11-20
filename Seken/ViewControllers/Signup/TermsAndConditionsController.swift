@@ -20,7 +20,6 @@ class TermsAndConditionsController: SekenViewController,UIWebViewDelegate {
         let myWebView:UIWebView = UIWebView(frame: CGRect(x:0, y:50, width: UIScreen.main.bounds.width, height:UIScreen.main.bounds.height-50))
         myWebView.delegate = self as UIWebViewDelegate
         self.view.addSubview(myWebView)
-        
         let myURL = URL(string: "http://dev.seken.com/seken-qa/en/terms-privacy")
         let myURLRequest:URLRequest = URLRequest(url: myURL!)
         myWebView.loadRequest(myURLRequest)

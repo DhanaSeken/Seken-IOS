@@ -72,7 +72,7 @@ class VerifyOTPViewController: SekenViewController {
     
     @IBAction func verifyButtonTouchupInside(_ sender: Any) {
         
-        if let otp1 = self.txtOTP1.text, otp1.characters.count > 0, let otp2 = self.txtOTP2.text, otp2.characters.count > 0, let otp3 = self.txtOTP3.text, otp3.characters.count > 0, let otp4 = self.txtOTP4.text, otp4.characters.count > 0 {
+        if let otp1 = self.txtOTP1.text, otp1.count > 0, let otp2 = self.txtOTP2.text, otp2.count > 0, let otp3 = self.txtOTP3.text, otp3.count > 0, let otp4 = self.txtOTP4.text, otp4.count > 0 {
             let OTPStr = String(format: "%@%@%@%@",otp1,otp2,otp3,otp4)
             print(OTPStr)
            // if self.otpStr == OTPStr {

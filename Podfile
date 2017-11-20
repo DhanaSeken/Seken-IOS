@@ -11,6 +11,8 @@ target 'Seken' do
   pod 'MICountryPicker', :git => 'https://github.com/mustafaibrahim989/MICountryPicker.git', :branch => 'master'
   pod 'IQKeyboardManagerSwift'
   pod 'IHKeyboardAvoiding'
+  pod 'Eureka'
+    pod 'SDWebImage', '~> 4.0'
 
   # Pods for Seken
 

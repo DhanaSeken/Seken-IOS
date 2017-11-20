@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Eureka
 
 class SearchLocationViewController: SekenViewController {
 
@@ -15,8 +16,9 @@ class SearchLocationViewController: SekenViewController {
 
         // Do any additional setup after loading the view.
            UIApplication.shared.statusBarView?.backgroundColor = UIColor(red: 65/255, green: 154/255, blue: 198/255, alpha: 1.0)
+        
     }
 
-    
 
+    
 }

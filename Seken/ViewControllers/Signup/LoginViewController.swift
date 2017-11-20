@@ -66,7 +66,7 @@ class LoginViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
     
     //Button Handler
     @IBAction func loginButtonClicked(_ sender: Any) {
-        if var userName = self.txtUserName.text, userName.characters.count > 0, let password = self.txtPassword.text, password.characters.count > 0 {
+        if var userName = self.txtUserName.text, userName.count > 0, let password = self.txtPassword.text, password.count > 0 {
             
             if self.isValidEmail(testStr: userName) {
                  self.showActivityIndicator()
@@ -80,7 +80,7 @@ class LoginViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
             }else{
                  self.showActivityIndicator()
                 if (self.countryCode == "966") {
-                    if userName.characters.count == 10 {
+                    if userName.count == 10 {
                         userName =  String(userName.dropFirst())
                     }
                     
@@ -165,7 +165,8 @@ class LoginViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
     @IBAction func faceButtonCliked(_ sender: Any) {
         self.showActivityIndicator()
         let loginManager = LoginManager()
-        loginManager.logIn([ .publicProfile,.email,.userFriends ], viewController: self) { loginResult in
+        loginManager.loginBehavior = .browser
+        loginManager.logIn(readPermissions: [ .publicProfile,.email,.userFriends ], viewController: self) { loginResult in
             self.hideActivityIndicator()
             switch loginResult {
             case .failed(let error):
@@ -174,13 +175,13 @@ class LoginViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
                 print("User cancelled login.")
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
                 print("Logged in!")
-                // self.showActivityIndicator()
+                self.hideActivityIndicator()
                 print (grantedPermissions)
                 print (declinedPermissions)
                 print (accessToken)
-               // self.calFaceBookLoginService(faceBookId: accessToken.appId, accessToken: accessToken.authenticationToken)
                
             }
+            
         }
     }
     
@@ -265,7 +266,7 @@ class LoginViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
             
             if (newString as NSString?) != nil {
                 
-                if newString.characters.count>0 {
+                if newString.count>0 {
                     
                     if (newString.isStringAnInt()) {
                         var dict = super.getcountryCode()

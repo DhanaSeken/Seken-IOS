@@ -18,7 +18,6 @@ class LocationViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    
 
 }
 extension UIApplication {

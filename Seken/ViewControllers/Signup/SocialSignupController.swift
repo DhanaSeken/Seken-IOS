@@ -139,10 +139,10 @@ class SocialSignupController: SekenViewController,ContryCodeModalVCDelegate,OTPV
          self.txtEmail.isUserInteractionEnabled = true
         self.txtName.isUserInteractionEnabled = true
         self.txtReferralcode.isUserInteractionEnabled = true
-        if self.phoneNumber.characters.count>0 {
+        if self.phoneNumber.count>0 {
             self.txtPhoneNumber.isUserInteractionEnabled = false
         }
-        if self.email.characters.count>0 {
+        if self.email.count>0 {
             self.txtEmail.isUserInteractionEnabled = false
         }
     }
@@ -155,7 +155,7 @@ class SocialSignupController: SekenViewController,ContryCodeModalVCDelegate,OTPV
         
     }
     func getReferalCode() -> String {
-        if let text = txtReferralcode.text, text.characters.count > 0 {
+        if let text = txtReferralcode.text, text.count > 0 {
             return text
         } else {
             return ""
@@ -211,15 +211,15 @@ class SocialSignupController: SekenViewController,ContryCodeModalVCDelegate,OTPV
     // MARK ButtonHandler
     @IBAction func signupButtonClicked(_ sender: Any) {
         
-        if let userName = self.txtName.text, userName.characters.count > 0, let email = self.txtEmail.text, email.characters.count > 0,var phonenumber = self.txtPhoneNumber.text, phonenumber.characters.count > 0{
+        if let userName = self.txtName.text, userName.count > 0, let email = self.txtEmail.text, email.count > 0,var phonenumber = self.txtPhoneNumber.text, phonenumber.count > 0{
             if (self.countryCode == "966") {
-                if phonenumber.characters.count == 10 {
+                if phonenumber.count == 10 {
                     phonenumber =  String(phonenumber.dropFirst())
                 }
                 
             }
             
-            if((((self.countryCode == "966" && phonenumber.characters.count == 9) || (self.countryCode == "91" && phonenumber.characters.count == 10))) && self.isValidEmail(testStr: email)) {
+            if((((self.countryCode == "966" && phonenumber.count == 9) || (self.countryCode == "91" && phonenumber.count == 10))) && self.isValidEmail(testStr: email)) {
                 self.showActivityIndicator()
                 UserAPI.sharedAPI.performSocialSignup(phoneNumber: String(format: "%@%@",self.countryCode,phonenumber), email: email, name: name, deviceType: "iOS", provider: self.provider, identifier: self.identifier, profileURL: "", gender: "", birthday: "", referalCode: self.getReferalCode(), method: "POST", successHandler: {
                     self.hideActivityIndicator()

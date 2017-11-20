@@ -102,7 +102,7 @@ class OTPViewController: SekenViewController {
 
     @IBAction func submitButtonTouchupInside(_ sender: Any) {
         
-           if let otp1 = self.txtOTP1.text, otp1.characters.count > 0, let otp2 = self.txtOTP2.text, otp2.characters.count > 0, let otp3 = self.txtOTP3.text, otp3.characters.count > 0, let otp4 = self.txtOTP4.text, otp4.characters.count > 0 {
+           if let otp1 = self.txtOTP1.text, otp1.count > 0, let otp2 = self.txtOTP2.text, otp2.count > 0, let otp3 = self.txtOTP3.text, otp3.count > 0, let otp4 = self.txtOTP4.text, otp4.count > 0 {
             
                let OTPStr = String(format: "%@%@%@%@",otp1,otp2,otp3,otp4)
                print(OTPStr)
@@ -111,12 +111,12 @@ class OTPViewController: SekenViewController {
                 UserAPI.sharedAPI.performValidateOTP(phoneNumber: self.phoneNumber, email: self.email, OTP: self.otpStr, method: "POST", successHandler: {
                     self.hideActivityIndicator()
                     
-                    if self.socialType.characters.count>0 {
+                    if self.socialType.count>0 {
                         
                         self.showDashBoard()
                     }else {
                         
-                        if self.password.characters.count>0 {
+                        if self.password.count>0 {
                              self.calSigninCal()
                         }else{
                              self.delegate?.pushDashboardVC()

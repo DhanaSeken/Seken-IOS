@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class PlaceCell: UICollectionViewCell {
     @IBOutlet var imgFlag: UIImageView!
     @IBOutlet var lblName: UILabel!
