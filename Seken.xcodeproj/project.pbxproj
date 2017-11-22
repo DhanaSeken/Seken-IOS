@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		180094BC1F9A1972006A7AF3 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180094BB1F9A1972006A7AF3 /* UserAPI.swift */; };
 		2FA38701D436CF6C83F215A8 /* Pods_SekenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54504536C1A6796F0AD2082C /* Pods_SekenTests.framework */; };
-		360C20E51F90D0AE00102192 /* DropDown in Resources */ = {isa = PBXBuildFile; fileRef = 360C20E41F90D0AE00102192 /* DropDown */; };
 		360C20E91F90D25200102192 /* NiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360C20E61F90D25200102192 /* NiceButton.swift */; };
 		360C20EA1F90D25200102192 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360C20E71F90D25200102192 /* MyCell.swift */; };
 		360F077B1FA2019E00414EE7 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360F077A1FA2019E00414EE7 /* Dashboard.storyboard */; };
@@ -27,6 +26,7 @@
 		3686CC7C1FC178110065BEC6 /* DashboardAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3686CC7B1FC178110065BEC6 /* DashboardAPI.swift */; };
 		3686CC7E1FC17BE70065BEC6 /* DashBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3686CC7D1FC17BE70065BEC6 /* DashBoard.swift */; };
 		3686CC801FC1C93A0065BEC6 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3686CC7F1FC1C93A0065BEC6 /* Home.storyboard */; };
+		3686CC8A1FC350290065BEC6 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3686CC891FC350290065BEC6 /* LocationCell.swift */; };
 		368E16961FA4833D00FDEE30 /* SocialSignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368E16951FA4833D00FDEE30 /* SocialSignupController.swift */; };
 		369F517E1F8B76CE00A0FF57 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369F517D1F8B76CE00A0FF57 /* OTPViewController.swift */; };
 		36B31AEF1FC02A8A004B7925 /* locationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B31AEE1FC02A8A004B7925 /* locationCell.xib */; };
@@ -126,7 +126,6 @@
 		0F47AC12128E1F5C74E02AE2 /* Pods_Seken.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Seken.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		180094BB1F9A1972006A7AF3 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
 		360C20E31F90C32500102192 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		360C20E41F90D0AE00102192 /* DropDown */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DropDown; sourceTree = "<group>"; };
 		360C20E61F90D25200102192 /* NiceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiceButton.swift; sourceTree = "<group>"; };
 		360C20E71F90D25200102192 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		360C20E81F90D25200102192 /* MyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
@@ -134,6 +133,7 @@
 		360F077C1FA201D400414EE7 /* DashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
 		36108A341F9F08060000F194 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		36108A361F9F08440000F194 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		36146AB01FC5394400D2C6EE /* Seken.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Seken.entitlements; sourceTree = "<group>"; };
 		361B63E91F8E52A20043B70D /* countryCodes.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = countryCodes.plist; sourceTree = "<group>"; };
 		365784881FBB05500016A010 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		3657848A1FBC20530016A010 /* SearchLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +146,7 @@
 		3686CC7B1FC178110065BEC6 /* DashboardAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardAPI.swift; sourceTree = "<group>"; };
 		3686CC7D1FC17BE70065BEC6 /* DashBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoard.swift; sourceTree = "<group>"; };
 		3686CC7F1FC1C93A0065BEC6 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		3686CC891FC350290065BEC6 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		368E16951FA4833D00FDEE30 /* SocialSignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignupController.swift; sourceTree = "<group>"; };
 		369F517D1F8B76CE00A0FF57 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		36B31AEE1FC02A8A004B7925 /* locationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = locationCell.xib; sourceTree = "<group>"; };
@@ -276,7 +277,6 @@
 			isa = PBXGroup;
 			children = (
 				36B535D91FBC7313005E2B37 /* Pulsator.swift */,
-				360C20E41F90D0AE00102192 /* DropDown */,
 			);
 			path = ThirdParty;
 			sourceTree = "<group>";
@@ -329,6 +329,7 @@
 			children = (
 				36B535DC1FBD0C60005E2B37 /* PlaceCell.swift */,
 				36B535E21FBD1C55005E2B37 /* TopRatedCell.swift */,
+				3686CC891FC350290065BEC6 /* LocationCell.swift */,
 			);
 			path = CustomCollectionviewCells;
 			sourceTree = "<group>";
@@ -362,6 +363,7 @@
 		36DBAC571F873B2900D7D0EA /* Seken */ = {
 			isa = PBXGroup;
 			children = (
+				36146AB01FC5394400D2C6EE /* Seken.entitlements */,
 				36DBAC8F1F873F6400D7D0EA /* ViewControllers */,
 				36DBAC8E1F873F4500D7D0EA /* Helpers */,
 				36DBAC8D1F873F1B00D7D0EA /* Managers */,
@@ -688,6 +690,11 @@
 					36DBAC541F873B2900D7D0EA = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					36DBAC6B1F873B2900D7D0EA = {
 						CreatedOnToolsVersion = 9.0;
@@ -740,7 +747,6 @@
 			files = (
 				36DBAC661F873B2900D7D0EA /* LaunchScreen.storyboard in Resources */,
 				360F077B1FA2019E00414EE7 /* Dashboard.storyboard in Resources */,
-				360C20E51F90D0AE00102192 /* DropDown in Resources */,
 				36DBACC81F87493400D7D0EA /* SanFranciscoFont-master in Resources */,
 				36DBAC631F873B2900D7D0EA /* Assets.xcassets in Resources */,
 				36B31AEF1FC02A8A004B7925 /* locationCell.xib in Resources */,
@@ -878,11 +884,14 @@
 		};
 		E916D7F36EDE5C7A52FFD6AD /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Seken/Pods-Seken-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -914,7 +923,7 @@
 		};
 		FEE0123E3E38E45B03A292D5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -971,6 +980,7 @@
 				36DBAD8E1F8794E100D7D0EA /* SignupViewController.swift in Sources */,
 				360C20EA1F90D25200102192 /* MyCell.swift in Sources */,
 				36DBACCD1F8753D600D7D0EA /* StartViewController.swift in Sources */,
+				3686CC8A1FC350290065BEC6 /* LocationCell.swift in Sources */,
 				368094471F96208D00A1489F /* CountryCode.swift in Sources */,
 				3680944C1F9764D000A1489F /* StringUtils.swift in Sources */,
 				36FA8C1A1F8CB492003EE70B /* CreatePasswordViewController.swift in Sources */,
@@ -1196,6 +1206,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Seken/Seken.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 266TUQ3P79;
 				INFOPLIST_FILE = Seken/Info.plist;
@@ -1213,6 +1224,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Seken/Seken.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 266TUQ3P79;
 				INFOPLIST_FILE = Seken/Info.plist;

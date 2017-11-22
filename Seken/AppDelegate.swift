@@ -12,6 +12,8 @@ import FacebookCore
 import FacebookLogin
 import GoogleSignIn
 import IQKeyboardManagerSwift
+import GooglePlaces
+import GooglePlacePicker
 
 
 @UIApplicationMain
@@ -29,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
         GIDSignIn.sharedInstance().clientID = Constants.GoogleSignupKeys.ClientID
         GIDSignIn.sharedInstance().delegate = self as GIDSignInDelegate
         IQKeyboardManager.sharedManager().enable = true
+        GMSPlacesClient.provideAPIKey("AIzaSyBLQFt6dqFePKh5t0MfQ8ueJ6_oIfX8RgY")
+      
        
         return true
     }

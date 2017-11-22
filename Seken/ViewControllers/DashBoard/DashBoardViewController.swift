@@ -24,6 +24,8 @@ class DashBoardViewController: SekenViewController {
     let placeContainerView = "PlaceView"
     let TopContainerView = "TopView"
     let BudgetContainerView = "BudgetView"
+    var dashboardData:DashBoard?
+    
     
     
     
@@ -48,6 +50,7 @@ class DashBoardViewController: SekenViewController {
         self.showActivityIndicator()
         DashboardAPI.sharedAPI.performGetDashboardData(method: "POST", successHandler: { dashboard in
              self.hideActivityIndicator()
+            self.dashboardData = dashboard
             self.reloadScreenUisngData(dashBoardData: dashboard)
             
         }, failureHandler: { errorMessage in
@@ -169,6 +172,8 @@ class DashBoardViewController: SekenViewController {
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "SearchLocationViewController") as! SearchLocationViewController
+        newViewController.recentSearches = (self.dashboardData?.localities)!
+        newViewController.topCities = (self.dashboardData?.localities)!
         self.navigationController?.pushViewController(newViewController, animated: true)
         
     }

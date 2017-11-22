@@ -12,7 +12,10 @@ target 'Seken' do
   pod 'IQKeyboardManagerSwift'
   pod 'IHKeyboardAvoiding'
   pod 'Eureka'
-    pod 'SDWebImage', '~> 4.0'
+  pod 'SDWebImage', '~> 4.0'
+  pod 'GooglePlaces'
+  pod 'GooglePlacePicker'
+  pod 'GoogleMaps'
 
   # Pods for Seken
 

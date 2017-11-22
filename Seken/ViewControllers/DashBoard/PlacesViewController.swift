@@ -13,7 +13,7 @@ import SDWebImage
 class PlacesViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     @IBOutlet var collectionview: UICollectionView!
      @IBOutlet var lblTitle: UILabel!
-    @IBOutlet weak var noElementLabel: UILabel!
+     @IBOutlet weak var noElementLabel: UILabel!
     
     struct Place
     {
