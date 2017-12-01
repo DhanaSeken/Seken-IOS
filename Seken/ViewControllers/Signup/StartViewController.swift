@@ -71,14 +71,17 @@ class StartViewController: SekenViewController,GIDSignInUIDelegate,GIDSignInDele
             }
             else
             {
-                guard let result = result as? NSDictionary, let email = result["email"] as? String,let user_name = result["name"] as? String
+                self.phoneNumber = ""
+                self.email = ""
+                self.name = ""
+                guard let result = result as? NSDictionary,let user_name = result["name"] as? String
                     else {
                         return
                       }
                 self.phoneNumber = ""
-                self.email = email
+                self.email = result["email"] as? String ?? ""
                 self.name = user_name
-                self.pushSocialSingupVC()
+               self.pushSocialSingupVC()
                 
             }
         })

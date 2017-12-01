@@ -18,20 +18,20 @@ public class DashBoard:NSObject {
     init(dashBoradDetails: [String: Any]) {
         
          let dashBoradDict = (dashBoradDetails as NSDictionary)
-        keysList = dashBoradDict.allKeys as! [String]
-         let templocalities = dashBoradDict["localities"] as? [[String:String]]
+        keysList = dashBoradDict["order"] as! [String]
+         let templocalities = dashBoradDict[keysList[0]] as? [[String:Any]]
         for localityDict in templocalities! {
             let localityDict = Locality.init(localityDetails: localityDict)
             self.localities.append(localityDict)
         }
         
-        let tempInstants = dashBoradDict["instant"] as? [[String:Any]]
+        let tempInstants = dashBoradDict[keysList[1]] as? [[String:Any]]
         for instantDict in tempInstants! {
             let hotelRoomDict = HotelRoom.init(hotelRoomDetails: instantDict)
             self.instanceRooms.append(hotelRoomDict)
         }
         
-        let tempNonInstants = dashBoradDict["regular"] as? [[String:Any]]
+        let tempNonInstants = dashBoradDict[keysList[2]] as? [[String:Any]]
         for nonInstantDict in tempNonInstants! {
             let hotelRoomDict = HotelRoom.init(hotelRoomDetails: nonInstantDict)
             self.nonInstanceRooms.append(hotelRoomDict)

@@ -14,6 +14,8 @@ class PlacesViewController: UIViewController,UICollectionViewDataSource,UICollec
     @IBOutlet var collectionview: UICollectionView!
      @IBOutlet var lblTitle: UILabel!
      @IBOutlet weak var noElementLabel: UILabel!
+    @IBOutlet weak var btnViewAll: UIButton!
+     
     
     struct Place
     {

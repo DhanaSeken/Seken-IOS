@@ -11,12 +11,17 @@ import Eureka
 import SekenSDK
 import SDWebImage
 import GooglePlaces
+import CoreLocation
 
 class SearchLocationViewController: SekenViewController,UITableViewDelegate,UITableViewDataSource,CLLocationManagerDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableview: UITableView!
     var recentSearches:[Locality] = []
     var topCities:[Locality] = []
+    var locManager: CLLocationManager!
+    var lat = ""
+    var lng = ""
+    var city = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +29,25 @@ class SearchLocationViewController: SekenViewController,UITableViewDelegate,UITa
         // Do any additional setup after loading the view.
            UIApplication.shared.statusBarView?.backgroundColor = UIColor(red: 65/255, green: 154/255, blue: 198/255, alpha: 1.0)
         
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.refreshTableView()
     }
     
     func refreshTableView() {
-        
-        self.tableview.reloadData()
+        self.showActivityIndicator()
+        DashboardAPI.sharedAPI.performGetTopLocalities(method: "POST", successHandler: { toplocalities in
+              self.hideActivityIndicator()
+            self.topCities = toplocalities.localities
+            self.recentSearches = toplocalities.recent
+            self.tableview.reloadData()
+        }, failureHandler: { errormessage in
+             self.hideActivityIndicator()
+            self.tableview.reloadData()
+        }, env: .dev)
+       
     }
     
      func numberOfSections(in tableView: UITableView) -> Int {
@@ -107,10 +126,8 @@ class SearchLocationViewController: SekenViewController,UITableViewDelegate,UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 {
-            
-            
-        }
+        
+       self.navigateSearchResultVC()
     }
 
     @IBAction func searchButtonTouchupInside(_ sender: Any) {
@@ -126,7 +143,42 @@ class SearchLocationViewController: SekenViewController,UITableViewDelegate,UITa
     }
     
     
+    private func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        
+        switch status {
+        case .notDetermined:
+            // If status has not yet been determied, ask for authorization
+            manager.requestWhenInUseAuthorization()
+            break
+        case .authorizedWhenInUse:
+            // If authorized when in use
+            manager.startUpdatingLocation()
+            break
+        case .authorizedAlways:
+            // If always authorized
+            manager.startUpdatingLocation()
+            break
+        case .restricted:
+            // If restricted by e.g. parental controls. User can't enable Location Services
+            break
+        case .denied:
+            // If user denied your app access to Location Services, but can grant access from Settings.app
+            break
+        default:
+            
+            break
+        }
+    }
+    
+    func navigateSearchResultVC()  {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "SearchResultVC") as! SearchResultVC
+        self.navigationController?.pushViewController(newViewController, animated: true)
+    }
+    
+    
 }
+
 
 extension SearchLocationViewController: GMSAutocompleteViewControllerDelegate {
     
@@ -154,10 +206,12 @@ extension SearchLocationViewController: GMSAutocompleteViewControllerDelegate {
     
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         // Print place info to the console.
+        var lat = place.coordinate.latitude
+        var lon = place.coordinate.longitude
         print("Place name: \(place.name)")
         print("Place address: \(String(describing: place.formattedAddress))")
         print("Place attributions: \(String(describing: place.attributions))")
-        
+        self.navigateSearchResultVC()
         // Get the address components.
         if let addressLines = place.addressComponents {
             // Populate all of the address fields we can find.

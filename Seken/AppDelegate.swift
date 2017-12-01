@@ -14,6 +14,7 @@ import GoogleSignIn
 import IQKeyboardManagerSwift
 import GooglePlaces
 import GooglePlacePicker
+import GoogleMaps
 
 
 @UIApplicationMain
@@ -31,7 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
         GIDSignIn.sharedInstance().clientID = Constants.GoogleSignupKeys.ClientID
         GIDSignIn.sharedInstance().delegate = self as GIDSignInDelegate
         IQKeyboardManager.sharedManager().enable = true
-        GMSPlacesClient.provideAPIKey("AIzaSyBLQFt6dqFePKh5t0MfQ8ueJ6_oIfX8RgY")
+        GMSPlacesClient.provideAPIKey("AIzaSyDM9EDhGjnyH7-FIbgQtzCI8mWa3ZA7kf4")
+   GMSServices.provideAPIKey("AIzaSyDM9EDhGjnyH7-FIbgQtzCI8mWa3ZA7kf4")
       
        
         return true

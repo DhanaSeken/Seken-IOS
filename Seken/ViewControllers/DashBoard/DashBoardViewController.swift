@@ -42,6 +42,11 @@ class DashBoardViewController: SekenViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
          self.locationViewController?.btnSearch.addTarget(self, action: #selector(searchButtonCliked), for: .touchUpInside)
+         self.placesViewController?.btnViewAll.addTarget(self, action: #selector(viewAllButtonCliked), for: .touchUpInside)
+        self.topRatedViewController?.btnViewAll.addTarget(self, action: #selector(topRatedViewAllButtonCliked), for: .touchUpInside)
+        self.budgetRatedViewController?.btnViewAll.addTarget(self, action: #selector(budgetViewAllButtonCliked), for: .touchUpInside)
+        
+        
          self.calDashBoardCal()
     }
     
@@ -74,16 +79,19 @@ class DashBoardViewController: SekenViewController {
           self.placesViewController.refreshCollectionView(localities: dashBoardData.localities)
           self.topRatedViewController.refreshCollectionView(hotelRooms: dashBoardData.instanceRooms)
           self.budgetRatedViewController.refreshCollectionView(hotelRooms: dashBoardData.nonInstanceRooms)
+             self.placesViewController.lblTitle.text = self.dashboardData?.keysList[0].uppercased()
+             self.topRatedViewController.lblTitle.text = self.dashboardData?.keysList[1].uppercased()
+              self.budgetRatedViewController.lblTitle.text = self.dashboardData?.keysList[2].uppercased()
 
        
     }
     
     
     func setupShadow(view:UIView)  {
-        self.locationContainerView.layer.masksToBounds = false
-        self.locationContainerView.layer.shadowOffset = CGSize(width: -1, height: 1)
-        self.locationContainerView.layer.shadowRadius = 1
-        self.locationContainerView.layer.shadowOpacity = 0.5
+        view.layer.masksToBounds = false
+        view.layer.shadowOffset = CGSize(width: -1, height: 1)
+        view.layer.shadowRadius = 1
+        view.layer.shadowOpacity = 0.5
     }
     
     func setupDefaultValues() {
@@ -93,7 +101,7 @@ class DashBoardViewController: SekenViewController {
         self.setupShadow(view: self.budgetContainerView)
         UIApplication.shared.statusBarView?.backgroundColor = UIColor(red: 65/255, green: 154/255, blue: 198/255, alpha: 1.0)
           self.scrollView.contentSize = CGSize(width: UIScreen.main.bounds.size.width, height: (self.budgetContainerView.frame.origin.y+self.budgetContainerView.frame.size.height+60))
-        self.scrollView.setContentOffset(CGPoint(x:0,y:-50), animated: false)
+       // self.scrollView.setContentOffset(CGPoint(x:0,y:-50), animated: false)
         
     }
 
@@ -174,6 +182,26 @@ class DashBoardViewController: SekenViewController {
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "SearchLocationViewController") as! SearchLocationViewController
         newViewController.recentSearches = (self.dashboardData?.localities)!
         newViewController.topCities = (self.dashboardData?.localities)!
+        self.navigationController?.pushViewController(newViewController, animated: true)
+        
+    }
+    @objc func viewAllButtonCliked() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "LocationViewAllVC") as! LocationViewAllVC
+        self.navigationController?.pushViewController(newViewController, animated: true)
+        
+    }
+   @objc func  topRatedViewAllButtonCliked() {
+    let storyBoard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+    let newViewController = storyBoard.instantiateViewController(withIdentifier: "SearchResultVC") as! SearchResultVC
+      newViewController.bookingType = "1"
+    self.navigationController?.pushViewController(newViewController, animated: true)
+    
+    }
+    
+    @objc func  budgetViewAllButtonCliked() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "SearchResultVC") as! SearchResultVC
         self.navigationController?.pushViewController(newViewController, animated: true)
         
     }

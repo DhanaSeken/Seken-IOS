@@ -12,4 +12,5 @@ class TopRatedCell: UICollectionViewCell {
     @IBOutlet var imgRoom: UIImageView!
     @IBOutlet var lblName: UILabel!
     @IBOutlet var lblPrice: UILabel!
+    @IBOutlet var btnFavourate: UIButton!
 }

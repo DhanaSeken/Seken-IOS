@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -143,7 +144,7 @@
         <scene sceneID="I9w-Bs-wp5">
             <objects>
                 <navigationController navigationBarHidden="YES" id="HOi-E4-jZv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="PROFILE" image="profile_pdf" selectedImage="profile" id="zAK-qy-pya"/>
+                    <tabBarItem key="tabBarItem" title="PROFILE" image="profile-1" selectedImage="profile_filled" id="zAK-qy-pya"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GVH-bX-ozL">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -175,7 +176,7 @@
         <scene sceneID="AmD-hq-A21">
             <objects>
                 <navigationController navigationBarHidden="YES" id="f4A-vg-Olh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="INBOX" image="inbox_pdf" badgeValue="0" id="HIS-fy-1SI"/>
+                    <tabBarItem key="tabBarItem" title="INBOX" image="inbox-1" badgeValue="0" selectedImage="inbox_filled" id="HIS-fy-1SI"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EWF-8v-VHd">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -207,7 +208,7 @@
         <scene sceneID="hUw-k8-8lU">
             <objects>
                 <navigationController navigationBarHidden="YES" id="cWA-KF-e7M" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="BOOKINGS" image="bookings_pdf" badgeValue="0" id="XdV-cK-Jgo"/>
+                    <tabBarItem key="tabBarItem" title="BOOKINGS" image="bookings-1" badgeValue="0" selectedImage="bookings_filled" id="XdV-cK-Jgo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Mkv-Oi-US0">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -239,7 +240,7 @@
         <scene sceneID="OuK-k6-UAZ">
             <objects>
                 <navigationController navigationBarHidden="YES" id="ihn-4M-wxL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="SAVED" image="saved_pdf" badgeValue="0" id="2Ap-0V-6xb"/>
+                    <tabBarItem key="tabBarItem" title="SAVED" image="saved-1" badgeValue="0" selectedImage="saved_filled" id="2Ap-0V-6xb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hOY-aK-Vch">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -498,7 +499,9 @@
                         <viewLayoutGuide key="safeArea" id="u1d-f6-skl"/>
                     </view>
                     <connections>
+                        <outlet property="btnViewAll" destination="u1N-C3-imQ" id="MUu-2s-NOl"/>
                         <outlet property="collectionview" destination="vyl-vt-DJT" id="xpK-35-nNg"/>
+                        <outlet property="lblTitle" destination="Xvl-h7-oLC" id="Y1H-4O-9Vz"/>
                         <outlet property="noElementLabel" destination="cEl-O9-Gml" id="Ika-Tv-zKj"/>
                     </connections>
                 </viewController>
@@ -515,9 +518,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INSTANCE ROOMS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaC-y5-uOk">
-                                <rect key="frame" x="16" y="20" width="134" height="31"/>
+                                <rect key="frame" x="16" y="20" width="201" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="134" id="Esh-Sj-9jr"/>
+                                    <constraint firstAttribute="width" constant="201" id="Esh-Sj-9jr"/>
                                     <constraint firstAttribute="height" constant="31" id="YIz-cR-bsm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SanFranciscoDisplay-Medium" family="San Francisco Display" pointSize="16"/>
@@ -621,6 +624,7 @@
                                         </constraints>
                                         <size key="customSize" width="160" height="211"/>
                                         <connections>
+                                            <outlet property="btnFavourate" destination="BMo-OI-kmQ" id="JNP-YS-0C0"/>
                                             <outlet property="imgRoom" destination="muS-8d-u8k" id="Dg0-VZ-0pu"/>
                                             <outlet property="lblName" destination="30C-61-XJS" id="VDa-xC-xj2"/>
                                             <outlet property="lblPrice" destination="qCP-t7-NIw" id="tHg-Cm-a8o"/>
@@ -662,7 +666,9 @@
                         <viewLayoutGuide key="safeArea" id="KSY-pa-SeA"/>
                     </view>
                     <connections>
+                        <outlet property="btnViewAll" destination="xvm-zD-Yxd" id="rwK-Pv-Or6"/>
                         <outlet property="collectionview" destination="izx-D6-h2y" id="89S-ZF-o6E"/>
+                        <outlet property="lblTitle" destination="VaC-y5-uOk" id="lV8-9L-hqp"/>
                         <outlet property="noElementLabe" destination="7KS-uu-sc2" id="pEB-T3-Ldy"/>
                     </connections>
                 </viewController>
@@ -765,7 +771,7 @@
                                                     <color key="textColor" red="0.0" green="0.60784313729999995" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5e1-QW-AfA">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5e1-QW-AfA">
                                                     <rect key="frame" x="121" y="15" width="35" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="F5J-Oe-u6F"/>
@@ -787,6 +793,7 @@
                                         </constraints>
                                         <size key="customSize" width="160" height="209"/>
                                         <connections>
+                                            <outlet property="btnFavourate" destination="5e1-QW-AfA" id="1Fv-z8-zEm"/>
                                             <outlet property="imgRoom" destination="f7U-0D-fNw" id="h03-u1-7m0"/>
                                             <outlet property="lblName" destination="dne-1t-4oJ" id="5pT-Kl-8E0"/>
                                             <outlet property="lblPrice" destination="pP3-7k-1zm" id="W5J-mW-k6w"/>
@@ -831,7 +838,9 @@
                         <viewLayoutGuide key="safeArea" id="NP6-ue-cIz"/>
                     </view>
                     <connections>
+                        <outlet property="btnViewAll" destination="OLv-zw-044" id="iAg-wy-n6t"/>
                         <outlet property="collectionview" destination="IRl-MQ-LJD" id="HEC-lb-PnS"/>
+                        <outlet property="lblTitle" destination="RNT-lR-KPJ" id="SnT-Vp-jSP"/>
                         <outlet property="noElementLabe" destination="JPn-q7-qdo" id="dRd-xM-IXc"/>
                     </connections>
                 </viewController>
@@ -841,15 +850,18 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bookings_pdf" width="60" height="60"/>
+        <image name="bookings-1" width="60" height="60"/>
+        <image name="bookings_filled" width="60" height="60"/>
         <image name="home_pdf" width="60" height="60"/>
-        <image name="inbox_pdf" width="60" height="60"/>
+        <image name="inbox-1" width="60" height="60"/>
+        <image name="inbox_filled" width="60" height="60"/>
         <image name="location" width="20" height="20"/>
-        <image name="profile" width="32" height="32"/>
-        <image name="profile_pdf" width="60" height="60"/>
+        <image name="profile-1" width="60" height="60"/>
+        <image name="profile_filled" width="60" height="60"/>
         <image name="riyadh" width="700" height="474"/>
         <image name="room" width="900" height="720"/>
         <image name="saved" width="32" height="32"/>
-        <image name="saved_pdf" width="60" height="60"/>
+        <image name="saved-1" width="60" height="60"/>
+        <image name="saved_filled" width="60" height="60"/>
     </resources>
 </document>
